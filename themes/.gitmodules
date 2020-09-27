@@ -1,0 +1,9 @@
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/budparr/gohugo-theme-ananke.git
+[submodule "themes/material"]
+	path = themes/material
+	url = https://github.com/Xzya/hugo-material-blog.git
+[submodule "themes/bootstrap"]
+	path = themes/bootstrap
+	url = https://github.com/Xzya/hugo-bootstrap.git
