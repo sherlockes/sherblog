@@ -16,7 +16,7 @@ tags:
 draft: false
 weight: 5
 ---
-Hay muchas formas de controlar las luces de Phillis Hue, aquí dejo la que yo empleo para apagar las luces mediante una simple línea de comando gracias a la Raspberry.
+Hay muchas formas de controlar las luces de Phillis Hue, aquí dejo la que empleo para apagar las luces mediante una simple línea de comando gracias a la Raspberry.
 
 <!--more-->
 
