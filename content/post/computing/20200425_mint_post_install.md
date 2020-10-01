@@ -1,6 +1,6 @@
 ---
 title: "Mi Post-instalación de Linux Mint"
-date: "2020-04-27"
+date: "2020-10-01"
 creation: "2020-04-25"
 description: "Aquí están todos los pasos que doy después de la instalación de Linux Mint, perfectamente documentado para que no se me olvide..."
 thumbnail: "images/20200425_mint_post_install_00.jpg"
@@ -17,16 +17,30 @@ weight: 5
 ---
 Hay cientos de artículos sobre post-instalaciones de sistemas operativos. Este sólo pretendo que me sirva de guía para mi en las futuras instalaciones de linux Mint, aunque si le puede ayudar a alguien...
 <!--more-->
+
+## Vivaldi (Navegador web) ##
+Después de la polémica creada sobre el navegador Brave, he cambiado a [Vivaldi] por la privacidad y todas las funciones que tiene. Rápido, sencillo y potente...
+
+### Telegram Desktop (Mensajería instantanea y...)
+Mis usos de Telegram los puedes ver en este post [Whatsapp Vs Telegram] y la instalación es tan simple como descargar [Telegram], descomprimir el archivo y ejecutar la aplicación desde la carpeta descomprimida (Tambien es posible instalarlo desde el "Gestor de software" de Linux Mint. Es posible fijar la aplicación a la barra de inicio o crear un lanzador en el escritorio si no eres de los de abrir las aplicaciones desde el teclado... 
+
 ## Keeweb (Gestor de contraseñas)
 Descargamos el paquete .deb desde la web de [Keeweb] y lo instalamos manualmente. Con esto ya puedo acceder a todos los nombres de usuario y contraseñas que tengo guardadas en una archivo de [Google Drive].
-
-## Brave (Navegador web)
-En la actualidad es el navegador que más confianza y fluidez me proporciona. Aunque no está incluido en el gestor de software de Linux Mint, la instalación de [Brave] está perfectamente documentada en su web.
 
 ## Insync (Sincronizador de archivos)
 La mayor parte de los archivos con los que trabajo a diario están en [Google Drive]. La forma más sencilla que conozco para trabajar con estos archivos es mediante el uso de [Insync].
 
 Es importante que las carpetas sincronizadas de Google Drive se ubiquen dentro de la ruta "/home/sherlockes/Google_Drive/" para que el resto de aplicaciones puedan acceder a los archivos de configuración
+
+## Emacs (Editor de texto)
+Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión. El archivo de configuración de Emacs llamado ".emacs" se creará en "/home/usuario/" y tendrá el siguiente contenido.
+```
+(setq user-init-file "/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs")
+(setq user-emacs-directory "/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs.d/")
+(setq default-directory "/home/sherlockes/")
+(setenv "HOME" "/home/sherlockes/")
+(load user-init-file)
+```
 
 ## Touchpad Indicator (Gestor táctil portatil)
 Para los que somos un poco manazas es fácil que se nos vaya algún pulgar al táctil del portatil mientras escribimos, de forma que nos mueve el puntero a otro punto del documento de forma que, como agaches un momento la cabeza... ya no estás escribiendo en el punto que lo estabas haciendo.
@@ -39,28 +53,11 @@ sudo add-apt-repository ppa:atareao/atareao
 sudo apt-get update
 sudo apt-get install touchpad-indicator
 ```
-## Emacs (Editor de texto)
-Desde el repositorio de paquetes de Linux Mint aunque no sea la última versión. El archivo de configuración de Emacs llamado ".emacs" se creará en "/home/usuario/" y tendrá el siguiente contenido.
-```
-(setq user-init-file "/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs")
-(setq user-emacs-directory "/home/sherlockes/Google_Drive/SherloScripts/emacs/.emacs.d/")
-(setq default-directory "/home/sherlockes/")
-(setenv "HOME" "/home/sherlockes/")
-(load user-init-file)
-```
+
 ### Inkscape (Diseño vectorial)
 Desde que empece a trabajar con el, apenas abro Gimp y me he acostumbrado a crear imágenes vectoriales mucho más ligeras y fáciles de redimensionar sin perder calidad.
 
-En el momento de escribir esto, la ultima versión de [Inkscape] es la 0.92 y su instalación para derivados de Ubuntu es posible hacerla apartir de repositorios.
-
-```
-sudo add-apt-repository ppa:inkscape.dev/stable-0.92
-sudo apt update
-sudo apt install inkscape
-```
-
-### Telegram Desktop (Mensajería instantanea y...)
-Mis usos de Telegram los puedes ver en este post [Whatsapp Vs Telegram] y la instalación es tan simple como descargar [Telegram], descomprimir el archivo y ejecutar la aplicación desde la carpeta descomprimida. Es posible fijar la aplicación a la barra de inicio o crear un lanzador en el escritorio si no eres de los de abrir las aplicaciones desde el teclado...
+En el momento de escribir esto, es posible instalar la versión 0.92 de [Inkscape] desde el "Gestor de Software" de Linux Mint o Instalar la versión 1 desde la web del creador en formato AppImage o FlatPak. Personalmente, no me importa renunciar a las últimas novedades en favor de la integración, tamaño y ligereza de la versión mediante repositorios.
 
 
 ### Rclone (Sincronizar nubes desde terminal)
@@ -70,11 +67,10 @@ curl https://rclone.org/install.sh | sudo bash
 ```
 La configuración completa de todas mis nubes la realizo copiando el archivo de respaldo "rclone.conf" al directorio "usuario/.config/rclone/rclone.conf"
 
-{{< borrador >}}
 ### Zerotier (Virtual VPN)
-curl -s https://install.zerotier.com | sudo bash
-[Zerotier]
+La instalación es tan sencilla como `curl -s https://install.zerotier.com | sudo bash` y añadimos el cliente a la red que tengamos creada en [Zerotier] mediante el comando `sudo zerotier-cli join 78898a1265hfg34b`
 
+{{< borrador >}}
 ### ImageMagick ###
 
 ```
@@ -88,7 +84,7 @@ Y por ahora esto es todo lo que tengo instalado en mi ordenador, poco a poco ir�
 
 [artículos sobre Rclone]: https://sherblog.pro/tags/rclone/
 [Atareao]: https://www.atareao.es
-[Brave]: https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux
+[Vivaldi]: https://vivaldi.com
 [Google Drive]: https://drive.google.com/
 [Inkscape]: https://inkscape.org/es/release/
 [Insync]: https://www.insynchq.com/downloads?start=true
