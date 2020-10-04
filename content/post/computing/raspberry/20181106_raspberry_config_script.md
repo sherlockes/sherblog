@@ -1,6 +1,6 @@
 ---
 title: "Script de configuración para Raspberry"
-date: "2020-10-02"
+date: "2020-10-04"
 creation: "2018-11-06"
 description: "Vover a configurar la Raspberry desde cero puede ser una tediosa labor, con este Script lo realizo de forma automática."
 thumbnail: "images/20181106_raspberry_config_script_00.jpg"
@@ -16,7 +16,9 @@ tags:
 draft: false
 weight: 5
 ---
-**Actualización: El sía que he necesitado el script me ha dado varios fallos así que toca darle una vuelta...** Está claro que de las partes más tediosas del cacharreo con la Raspberry es el tener que de nuevo comenzar la instalación desde cero y realizar siempre la misma configuración inicial.  Por esto he creado un Script que automatiza este proceso y realiza la siguiente configuración.
+**Actualización: El día que he necesitado el script me ha dado varios fallos así que toca darle una vuelta...**
+
+La parte más tediosa del cacharreo con la Raspberry es el tener que de nuevo comenzar la instalación desde cero y realizar siempre la misma configuración inicial.  Con este Script tengo automatizado el proceso.
 
 <!--more-->
 He intentado en todo momento que el script sea lo más "desatendido" posible y que, tras los ajustes de configuración inicial, el resto del proceso sea automático.
