@@ -18,7 +18,7 @@ weight: 5
 ---
 La parte más tediosa del cacharreo con la Raspberry es el tener que de nuevo comenzar la instalación desde cero y realizar siempre la misma configuración inicial.  Con este Script tengo automatizado el proceso.
 
-**Actualización: El día que he necesitado el script me ha dado varios fallos así que toca darle una vuelta...**
+**Actualización: El día que he necesitado el script me ha dado varios fallos así que toca darle una vuelta...**
 <!--more-->
 He intentado en todo momento que el script sea lo más "desatendido" posible y que, tras los ajustes de configuración inicial, el resto del proceso sea automático.
 
