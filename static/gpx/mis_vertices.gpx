@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <gpx creator="GPS Visualizer http://www.gpsvisualizer.com/" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="40.5915883" lon="-2.8167506">
+<name>berninches</name>
+</wpt>
 <wpt lat="41.61045022" lon="-0.95416909">
 <name>cabezo_casellas</name>
 </wpt>
@@ -8,6 +11,9 @@
 </wpt>
 <wpt lat="41.61946" lon="-1.0344">
 <name>collado_ladrones</name>
+</wpt>
+<wpt lat="41.4212" lon="-1.0240">
+<name>corona_del_fraile</name>
 </wpt>
 <wpt lat="41.0400156" lon="-0.5244597">
 <name>coronas</name>
@@ -24,6 +30,9 @@
 <wpt lat="41.6538822" lon="-0.7427812">
 <name>frances</name>
 </wpt>
+<wpt lat="40.5539158" lon="-2.7665518">
+<name>laguna</name>
+</wpt>
 <wpt lat="41.0319039" lon="-0.7903796">
 <name>la_sarda</name>
 </wpt>
@@ -39,14 +48,26 @@
 <wpt lat="42.5202837" lon="-0.5423431">
 <name>oroel</name>
 </wpt>
+<wpt lat="41.529" lon="-0.736">
+<name>pedregosa</name>
+</wpt>
 <wpt lat="41.2829811" lon="-0.5166888">
 <name>pedreñal</name>
 </wpt>
 <wpt lat="41.3790035" lon="-0.3656885">
 <name>picones</name>
 </wpt>
+<wpt lat="41.593" lon="-0.834">
+<name>pilonas</name>
+</wpt>
+<wpt lat="41.5271" lon="-1.0692">
+<name>pino</name>
+</wpt>
 <wpt lat="41.1479348" lon="-0.5108071">
 <name>planetas</name>
+</wpt>
+<wpt lat="41.511" lon="-0.818">
+<name>puig_aguila</name>
 </wpt>
 <wpt lat="41.3262571" lon="-0.3048359">
 <name>puntales</name>
@@ -62,6 +83,9 @@
 </wpt>
 <wpt lat="41.4662748" lon="-0.2533447">
 <name>retuerta</name>
+</wpt>
+<wpt lat="41.527" lon="-0.957">
+<name>salinas</name>
 </wpt>
 <wpt lat="41.2603003" lon="-0.5762267">
 <name>san_martin</name>
@@ -84,7 +108,13 @@
 <wpt lat="41.6906272" lon="-0.7370697">
 <name>valdeatalaya</name>
 </wpt>
+<wpt lat="41.5108" lon="-1.10933">
+<name>valdejimeno</name>
+</wpt>
 <wpt lat="41.4370004" lon="-0.3517226">
 <name>valdelosjubos</name>
+</wpt>
+<wpt lat="41.562" lon="-0.812">
+<name>varillo_de_belchite</name>
 </wpt>
 </gpx>

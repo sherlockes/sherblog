@@ -25,8 +25,8 @@ vertice_lat: "41.527"
 vertice_alt: "614"
 vertice_hoja: "0383"
 vertice_id: "61"
-vertice_img: "https://imgur.com/lzT25Z8"
-vertice_pan: "https://imgur.com/tj4ujqp"
+vertice_img: "lzT25Z8"
+vertice_pan: "tj4ujqp"
 vertice_videopan: "Ankp47hV7Qo"
 
 ---
