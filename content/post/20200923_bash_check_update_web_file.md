@@ -17,4 +17,4 @@ weight: 5
 ---
 Si eres de los que se pega horas refrescando una web para ver si han actualizado un archivo que está colgado, aquí dejo el método que he utilizado para evitar el mal rato mediante un script en bash.
 <!--more-->
-Una combinación de "Web Scrapping" bash y un bot de telegram es lo que he utilizado para esta operacion.
+Una combinación de "Web Scrapping" bash y un bot de telegram es lo que he utilizado para esta operacion
