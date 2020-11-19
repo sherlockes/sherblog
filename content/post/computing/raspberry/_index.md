@@ -30,34 +30,35 @@ De esta forma, con el servidor web montado sobre la Raspberry podría tener apag
 [Apache y Php]({{<relref"20180401_raspberry_apache_php.md">}})\
 [MySql y DB]({{<relref"20180401_raspberry_mysql_bd.md">}})\
 [Descargando WordPress]({{<relref"20180401_raspberry_descargando_wordpress.md">}})\
-[El servidor FTP]({{<relref"20180401_raspberry_ftp.md">}})\\
+[El servidor FTP]({{<relref"20180401_raspberry_ftp.md">}})\
 [Instalando WordPress]({{<relref"20180401_raspberry_instalando_wordpress.md">}})\
 [Instalado DokuWiki]({{<relref"20180401_raspberry_dokuwiki.md">}})\
 [Copia de seguridad]({{<relref"20180401_raspberry_copia_seguridad.md">}})\
 [Acceder desde el exterior]({{<relref"20180401_raspberry_acceso_exterior.md">}})\
 
-**__Uso avanzado__**\\
+**__Uso avanzado__**\
 [Reinicios periódicos]({{<relref"20180501_raspberry_reinicios_periodicos.md">}})\
 [Servidor VPN]({{<relref"20180501_raspberry_servidor_vpn.md">}})\
 [Acceso a las nubes con rclone]({{<relref"20180910_raspberry_rclone.md">}})\
 [Creando un script de configuración inicial]({{<relref"20181106_raspberry_config_script.md">}})\
 [Docker]({{<relref"20180601_raspberry_docker.md">}})\
 [Moodle con MoodleBox]({{<relref"20200215_raspberry_moodle.md">}})\
+[Termostato casero]({{<relref"20201112_raspberry_termostato.md">}})\
 Lo siguiente... Hugo
 
 ### Enlaces de interés
 
-[Innerzaurus - Configurar Raspberry sin monitor ni teclado](https://www.innerzaurus.com/diy/raspberry-pi/configurar-una-raspberry-pi-sin-monitor-ni-teclado)\\
-[Ugeek - NextCloud en Raspberry Pi 3](https://ugeek.github.io/Nextcloud-en-Raspberry-Pi-3)\\
-[Morituri - Setup a web server & WordPress on a Raspberry Pi with raspbian strech](http://morituri.co.nf/raspberry-pi/how-to-set-up-a-web-server-and-install-wordpress-on-a-raspberry-pi-raspbian-stretch)\\
-[Instructables - Raspberry Pi & php web server](http://www.instructables.com/id/Setup-a-Raspberry-Pi-PHP-web-server)\\
-[Howto Raspberry Pi - Install Wordpress with nginx](https://howtoraspberrypi.com/install-wordpress-on-a-raspberry-pi-with-nginx)\\
-[Ocho bits hacen un byte - Soporte ssh sftp wordpress](https://www.ochobitshacenunbyte.com/2016/01/21/soporte-ssh-sftp-wordpress)\\
-[JVE Web - Sincronizando con rsync](http://www.jveweb.net/archivo/2010/11/sincronizando-carpetas-con-rsync.html)\\
-[TechRepublic - Backup database from the command line](https://www.techrepublic.com/article/how-to-back-up-mysql-databases-from-the-command-line-with-linux)\\
-[Evotec - How to backup from ftp to Synology](https://evotec.xyz/how-to-backup-ftp-to-synology)\\
-[MViera - Entendiendo Umask](https://mviera.io/blog/entendiendo-umask)\\
-[No-ip - Install duc on Raspberry](http://www.noip.com/support/knowledgebase/install-ip-duc-onto-raspberry-pi)\\
+[Innerzaurus - Configurar Raspberry sin monitor ni teclado](https://www.innerzaurus.com/diy/raspberry-pi/configurar-una-raspberry-pi-sin-monitor-ni-teclado)\
+[Ugeek - NextCloud en Raspberry Pi 3](https://ugeek.github.io/Nextcloud-en-Raspberry-Pi-3)\
+[Morituri - Setup a web server & WordPress on a Raspberry Pi with raspbian strech](http://morituri.co.nf/raspberry-pi/how-to-set-up-a-web-server-and-install-wordpress-on-a-raspberry-pi-raspbian-stretch)\
+[Instructables - Raspberry Pi & php web server](http://www.instructables.com/id/Setup-a-Raspberry-Pi-PHP-web-server)\
+[Howto Raspberry Pi - Install Wordpress with nginx](https://howtoraspberrypi.com/install-wordpress-on-a-raspberry-pi-with-nginx)\
+[Ocho bits hacen un byte - Soporte ssh sftp wordpress](https://www.ochobitshacenunbyte.com/2016/01/21/soporte-ssh-sftp-wordpress)\
+[JVE Web - Sincronizando con rsync](http://www.jveweb.net/archivo/2010/11/sincronizando-carpetas-con-rsync.html)\
+[TechRepublic - Backup database from the command line](https://www.techrepublic.com/article/how-to-back-up-mysql-databases-from-the-command-line-with-linux)\
+[Evotec - How to backup from ftp to Synology](https://evotec.xyz/how-to-backup-ftp-to-synology)\
+[MViera - Entendiendo Umask](https://mviera.io/blog/entendiendo-umask)\
+[No-ip - Install duc on Raspberry](http://www.noip.com/support/knowledgebase/install-ip-duc-onto-raspberry-pi)\
 [El Atareado - Acceder a tu red local desde fuera con Raspberry Pi y Openvpn](https://www.atareao.es/tutorial/raspberry-pi-primeros-pasos/acceder-a-la-red-local-desde-fuera)
 
 ### Artículos
