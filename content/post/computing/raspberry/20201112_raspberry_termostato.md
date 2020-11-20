@@ -1,6 +1,6 @@
 ---
 title: "Termostato Raspberry"
-date: "2020-11-19"
+date: "2020-11-20"
 creation: "2020-11-12"
 description: "Proceso de la creación de un termostato mediante la raspberry en python"
 thumbnail: "/images/20201112_termostato_raspberry_00.jpg"
@@ -20,11 +20,37 @@ weight: 5
 ---
 Con la reciente muerte de termostato inteligente de NetAtmo a causa de una simple pila sulfatada me he decidido a crear el mio propio con la raspberry y un poco de Python. Iré escribiendo aquí los procesos con el mismo.
 <!--more-->
+### Archivo de configuración ###
+Puesto que la idea es construir un script que se ejecute cada determinado tiempo, necesito un archivo que dote al sistema de persistencia de algunas variables. Después de barajar varias alternativas, he optado por guardar los datos de configuración en un archivo "config.json" ubicado en la carpeta raiz del usario que ejecuta el script.
 
-### Captura de la temperatura ###
+El manejo de este tipo de archivos en python es muy sencillo y queda sentenciado con sólo seis líneas de código.
+```
+import json
+
+with open('/home/pi/config.json', 'r') as archivo_json:
+    data=archivo_json.read()
+
+datos_json = json.loads(data)
+
+...
+...
+... 
+...
+...
+
+with open("config.json", "w") as archivo_json:
+    json.dump(datos_json, archivo_json, indent = 4)
+```
+Al principio del script hay que importar la librería "json", abrir el archivo en modo de lectura, leer el contenido y asignar este al dicionario "json_data". Una vez realizadas las modificaciones necesarias en el diccionario a lo largo del script principal hay que abrir nuevamente el archivo "config.json", aunque esta vez en modo de escritura, y volcar sobre el el contenido del diccionario "datos_json" modificado.
+
+La variables utilizadas en el almacenamiento externo de variables son:
+- data - Lectura del archivo json
+- datos_json - Diccionario de datos con variables
+
+### Captura de la temperatura interior ###
 Para tomar la temperatura que tengo en casa voy a utilizar un DHT22 (sensor de humedad y temperatura) que, aunque no es lo más preciso del mundo, es suficientemente barato como para empezar a hacer pruebas. En el artículo de [atareao] se explica perfectamente como llevar a cabo esta medición. El propio sensor DHT22, una resistencia de 10k y tres cables para conectar al puerto GPIO de la Raspberry es odo lo que he necesitado.
 
-[Image_01]: /images/20201112_termostato_raspberry_01.jpg
+![Imagen_01]
 
 Necesitamos una librería para capturar los datos del sensor. Esta se instalará en la raspberry medianta el comando `sudo pip3 install Adafruit_DHT` siempre y cuando tengamos instalado Python3 y el gestos de paquetes pip.
 
@@ -50,8 +76,17 @@ Las variables utilizadas en la adquisición de temperatura son las siguientes:
 - real_hume - Humedad medida y redondeada
 - real_temp - Temperatura medida y redondeada
 
+{{< borrador >}}
+
+### El relé de la caldera ###
+
+Para poder enceder la caldera es necesario un relé. Lo más sencilo hubiera sido colocar uno que, a través del puerto GPIO, fuera directamente gobernado por la Raspberry pero tengo una serie de limitaciones en casa que no me han permitido hacerlo. Por eso necesito un relé que cumpla con lo siguiente:
+
+
+{{< / borrador >}}
 
 [atareao]: https://www.atareao.es/podcast/temperatura-con-la-raspberry/
 [Adafruit-DHT]: https://pypi.org/project/Adafruit-DHT/
 [jota]: https://github.com/domoticafacilconjota/capitulos/blob/master/temporada_1/S01E23/rester-ewelink
 
+![Imagen_01]: /images/20201112_termostato_raspberry_01.jpg
