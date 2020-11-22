@@ -89,4 +89,4 @@ Para poder enceder la caldera es necesario un relé. Lo más sencilo hubiera sid
 [Adafruit-DHT]: https://pypi.org/project/Adafruit-DHT/
 [jota]: https://github.com/domoticafacilconjota/capitulos/blob/master/temporada_1/S01E23/rester-ewelink
 
-![Imagen_01]: /images/20201112_termostato_raspberry_01.jpg
+[Imagen_01]: /images/20201112_termostato_raspberry_01.jpg
