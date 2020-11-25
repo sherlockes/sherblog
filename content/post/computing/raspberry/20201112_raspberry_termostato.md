@@ -1,6 +1,6 @@
 ---
 title: "Termostato Raspberry"
-date: "2020-11-20"
+date: "2020-11-25"
 creation: "2020-11-12"
 description: "Proceso de la creación de un termostato mediante la raspberry en python"
 thumbnail: "/images/20201112_termostato_raspberry_00.jpg"
@@ -76,17 +76,58 @@ Las variables utilizadas en la adquisición de temperatura son las siguientes:
 - real_hume - Humedad medida y redondeada
 - real_temp - Temperatura medida y redondeada
 
-{{< borrador >}}
-
 ### El relé de la caldera ###
 
 Para poder enceder la caldera es necesario un relé. Lo más sencilo hubiera sido colocar uno que, a través del puerto GPIO, fuera directamente gobernado por la Raspberry pero tengo una serie de limitaciones en casa que no me han permitido hacerlo. Por eso necesito un relé que cumpla con lo siguiente:
 
+- Alimentación de 220V
+- Conexión wifi
+- Relé seco (Sin tensión en lo contactos)
+- Disponibilidad de API
+
+Aunque no son muchas las limitaciones que le he impuesto, no me ha resultado fácil enontrar un relé que se adapte a ellas y el resultado es este.
+
+![Imagen_02]
+
+Una combinación casera de un [relé wifi sonoff], un [transformador] de 220V a 5V y un [relé] de 5V (todo perfectamente unido con cinta adhesiva) que si no quieres esperar y los compras en Amazon te constarán en total poco más de 20€ pero que si no tienes prisa se pueden encontar en Aliexpress por menos de la mitad.
+
+Según lo he montado, la Raspberry menda a través de wifi el comando de activación al relé Sonnoff y, cuando este se activa alimenta al mini transformador que a su  vez hace lo mismo con el relé seco de 5V. A través del contacto de este segundo relé activamos los contactos del termostato de la caldera. una combinación efectiva, fiable y económica.
+
+{{< borrador >}}
+
+#### El modo DIY de Sonoff ####
+La principal característica que convierte al relé Sonoff mini en el más interesante para este proyecto es el modo DIY (Hazlo tu mismo) gracias al cual se puede gobernar el interruptor mediante un comando enviado a través de wifi sin que sea necesaria una app, plugin o skill intermedia.
+
+En la web del fabricante está perfectamente documentado como habilitar el modo [DIY] que se resume en lo siguiente:
+
+- Alimentar el relé
+- Instalar la aplicación [ewelink]
+- Conectar el relé a la aplicación
+- Actualizar el firmware del relé a través de la App
+- Resetear el relé pulsando el botón de emparejamiento durante 5 segundos
+- Volver a pulsar durante 5 segundos el botón para entrar en el modo de emparejamiento
+
+> LLegados a este punto el led del relé deberá estar parpadeando de forma intermitente. Habrá creado una red wifi llamada ITEAD-XXXXXXXXXX. Es importante guardar este nombre ya que la segunda parte corresponde a la identificación del relé que la usaremos posteriormente.
+
+- Conectarse a la red wifi creada por el relé
+- Abrir en el navegador la dirección http://10.10.7.1/
+
+![Imagen_03]
+
+
+mdns-scan
 
 {{< / borrador >}}
 
 [atareao]: https://www.atareao.es/podcast/temperatura-con-la-raspberry/
 [Adafruit-DHT]: https://pypi.org/project/Adafruit-DHT/
+[DIY]: http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html
+[eewlink]: https://sonoff.tech/ewelink
 [jota]: https://github.com/domoticafacilconjota/capitulos/blob/master/temporada_1/S01E23/rester-ewelink
+[transformador]: https://www.amazon.es/gp/product/B074CB1N7Z/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1
+[relé wifi sonoff]: https://www.amazon.es/Interruptor-peque%C3%B1o-interruptor-soporte-funciona/dp/B07X1CHF3V/ref=sr_1_17?dchild=1&keywords=sonoff+mini&qid=1606301867&sr=8-17
+[relé]: https://www.amazon.es/gp/product/B07CNR7K9B/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1
 
 [Imagen_01]: /images/20201112_termostato_raspberry_01.jpg
+[Imagen_02]: /images/20201112_termostato_raspberry_02.jpg
+[Imagen_03]: /images/20201112_termostato_raspberry_03.jpg
