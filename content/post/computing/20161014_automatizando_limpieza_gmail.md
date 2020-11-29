@@ -1,6 +1,7 @@
 ---
 title: "Automatizando la limpieza de Gmail"
-date: "2016-10-14"
+date: "2020-11-29"
+creation: "2016-10-14"
 description: "La mejor forma de tener la bandeja de entrada los más despejada posible es dedicarle un tiempo o automatizar la limpieza.  Así lo hago en Gmail"
 thumbnail: "images/20161014_promociones_05.jpg"
 disable_comments: true
@@ -34,7 +35,26 @@ Aparece un nuevo proyecto en blanco en el que incluiremos la siguiente función:
 ```
 function limpiar_propaganda() {
   var filtro = GmailApp.search('category:promotions older_than:10d');
-  for (var i = 0; i &lt; filtro.length; i++) {
+  for (var i = 0; i < filtro.length; i++) {
+    filtro[i].moveToTrash();
+  }
+}
+```
+
+Por otro lado tengo definida un par de reglas en la configuración de gmail para los correos "menos importantes" que se pueden borrar sin ningún problema pasados diez días después de su recepción y que etiquetará como "notificarme".
+
+![imagen-06]
+
+Ahora sólo resta añadir un segundo bucle "for" en el script para busque los mensajes de correo con la etiqueta "notificarme" y una antigüedad mayor de diez días para proceder a eliminarlos.  De esta forma el script completo quedará como lo siguiente.
+
+```
+function limpiar_propaganda() {
+  var filtro = GmailApp.search('category:promotions older_than:10d');
+  for (var i = 0; i < filtro.length; i++) {
+    filtro[i].moveToTrash();
+  }
+  var filtro = GmailApp.search('label:notificarme older_than:10d');
+  for (var i = 0; i < filtro.length; i++) {
     filtro[i].moveToTrash();
   }
 }
@@ -44,12 +64,13 @@ Lo guardamos, le damos nombre y fijamos los activadores del proyecto activo a un
 
 ![imagen][4]
 
-A partir de ahora y de forma automática, cada hora se borrarán los correos con promociones de más de diez días de antigüedad.
+A partir de ahora y de forma automática, cada hora se borrarán los correos con promociones o la etiqueta "notificarme" de más de diez días de antigüedad.
 
 [1]: /images/20161014_promociones_01.jpg
 [2]: /images/20161014_promociones_02.jpg
 [3]: /images/20161014_promociones_03.jpg
 [4]: /images/20161014_promociones_04.jpg
+[imagen-06]: /images/20161014_promociones_06.jpg
 
 [11]: https://www.google.com/script/start/
 [12]: https://drive.google.com/drive/u/0/my-drive
