@@ -15,8 +15,11 @@ tags:
 draft: false
 weight: 5
 ---
-### El problema
 Si eres de los que realiza compras en internet, no te importa recibir ofertas, usas Gmail como gestor de correo electrónico y usas la pestaña "Promociones" creo que este artículo te va a interesar.
+
+<!--more-->
+
+### El problema
 
 Haciendo una estimación aproximada, creo que recibo un correo electrónico cada menos de dos horas de las tiendas y servicios online que utilizo. Estos son mensajes que van directamente a la pestaña "Promociones" de Gmail por lo que no me molestan con continuas notificaciones.
 
