@@ -37,7 +37,7 @@ Deberemos conocer el identificador de la carpeta compartida para lo cual, entrar
 
 En mi caso el identificador de la carpeta será -> 0AKXXD2qTbW50Uk9PVA
 
-Ya estamoa listos para abrir una terminal y escribir el comando
+Ya estamos listos para abrir una terminal y escribir el comando
 
 ```
 rclone config

@@ -34,6 +34,20 @@ He intentado en todo momento que el script sea lo más "desatendido" posible y q
 * Instala el servidor de openvpn o wireguard mediante pivpn
 * Programa un reinicio diario y commits de los repositorios
 
+{{< borrador >}}
+Configuración del crontab -e
+
+@reboot ~/SherloScripts/python/termoflask/init.sh > ~/flask.log 2>&1
+@daily ~/SherloScripts/bash/sherloscripts_push.sh
+@daily ~/SherloScripts/bash/radares.sh
+@daily ~/SherloScripts/bash/hugo.sh
+@daily ~/SherloScripts/bash/gphotos-sync.sh
+@hourly ~/SherloScripts/bash/publish.sh
+40 8-15/6 * * * ~/SherloScripts/python/tiempo.py
+*/5 * * * * ~/SherloScripts/python/termo.py > /home/pi/termostato.log 2>&1
+
+{{< / borrador >}}
+
 Para comenzar descargamos el archivo de configuración y lo dotamos de permisos de ejecución.
 
 ```
