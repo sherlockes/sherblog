@@ -1,6 +1,6 @@
 ---
 title: "Insertar comentarios en Hugo"
-date: "2020-04-08"
+date: "2021-01-02"
 creation: "2020-04-07"
 description: "Está es la forma que utilizo para actualizar entradas y evitar que se muestren los cambios hasta que esté terminada la actualización."
 thumbnail: "images/20200407_hugo_actualizar_entrada_00.jpg"
@@ -37,5 +37,21 @@ Aquí iremos añadiendo el contenido con el que queremos actualizar la entrada..
 
 Y así de sencillo, cuando queramos que el contenido actualizado se muestre tan solo tenemos que eliminar las primera y última linea.
 
+
+Pues bien, como casi todos los artículos los escribo en Emacs me he creado un pequeño atajo de teclado para la inclusión de estos comentarios gracias a [yasnippet] para lo cual solo es necesario crear un nuevo atajo desde un archivo markdown de una de las entradas del blog (yas-new-snippet) e incluir el siguiente texto.
+
+```
+# -*- mode: snippet -*-
+# name: comentario
+# key: comentario
+# --
+{{</* borrador */>}}
+${1:Comentario...}
+{{</* / borrador */>}}
+```
+
+Lo guardamos (C-x C-w) con el nombre que nos apetezca y ya está listo para utilizarse. Sólo hay que empezar una línea con la palabra comentario y pulsar el tabulador.
+
 [Hugo]: https://gohugo.io/
 [andreasbergstrom.com]: https://andreasbergstrom.com/posts/comments-in-hugo/
+[yasnippet]: https://github.com/joaotavora/yasnippet

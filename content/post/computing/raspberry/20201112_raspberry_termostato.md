@@ -1,6 +1,6 @@
 ---
 title: "Termostato Raspberry"
-date: "2020-11-25"
+date: "2021-01-02"
 creation: "2020-11-12"
 description: "Proceso de la creación de un termostato mediante la raspberry en python"
 thumbnail: "/images/20201112_termostato_raspberry_00.jpg"
@@ -46,6 +46,54 @@ Al principio del script hay que importar la librería "json", abrir el archivo e
 La variables utilizadas en el almacenamiento externo de variables son:
 - data - Lectura del archivo json
 - datos_json - Diccionario de datos con variables
+
+### Inicialización de variables ###
+
+La primera vez que abramos este archivo de configuración estará vacío por lo que nos tendremos que asegurar de inicializar unas "variables por defecto" para no tenga lugar el correspondiente error en caso de uqe alguna no exista o tenga un valor nulo. Esto se realiza mediante el siguiente código una vez que la variable "datos_json" ha sido creada a partir del contenido del archivo.
+
+```
+def inic_var(var,valor):
+    if var in datos_json:
+        if datos_json[var] == "":
+            datos_json[var] = valor
+    else:
+        datos_json[var] = valor
+
+variables = {
+    "rele_estado": "off",
+    "rele_hora_cambio": datetime.now().strftime('%Y/%m/%d %H:%M:%S'),
+    "histeresis": 0.2,
+    "inercia": 750,
+    "inercia_rango": 1.013,
+    "consigna": 21.0,
+    "rele_total_on": 0,
+    "cons_manual": 21.0,
+    "hora_manual": "2020/12/30 16:45:32",
+    "min_manual": 60,
+    "modo_fuera": False,
+    "cons_fuera": 16,
+    "dec_casa_vacia": 1,
+    "horas": ["7:45","9:00","12:30","18:00","22:30"],
+    "temperaturas": ["22","20.5","21.5","22.5","20.5"]
+}
+
+for x in variables:
+    inic_var(x,variables[x])
+```
+
+Este código lo podemos dividir en tres partes, la función que inicializa las variables, el almacenamiento de las variables y la ejecución de la función para cada una de las variables.
+
+#### La función inic_var ####
+La función "inic_var" coge dos argumentos, por un lado el nombre de la variable a inicializar y por otro su valor por defecto. En un primer momento se comprueba si la variable existe dentro de "datos_json", si lo está y su valor es nulo le asignará el valor por defecto. En caso de que la variable no esté definida, se creará asignándole su valor por defecto.
+
+#### El diccionario de variables ####
+Después de barajar varias alternativas, he considerado que la forma más clara de representar todo el conjunto de variables dentro de un elemento es haciendo uso de un diccionario que he denominado "variables" en el que cada clave será el nombre de la variable a inicializar y el valor de la misma el valor por defecto de esta variable que está siendo inicializada.
+
+#### For sobre el diccionario ####
+Con la lista de variables, su valor por defecto y la función para inicializar cada una de ellas preparada solo resta realizar una combinación de ambas mediante un lazo "For". De esta forma cada variable existente dentro del diccionario "Variables" sera inicializada mediante la funcion "inic_var"
+
+La variables utilizadas en la inicialización de variables son:
+- variables - Diccionario con el nombre de variable y valor por defecto
 
 ### Captura de la temperatura interior ###
 Para tomar la temperatura que tengo en casa voy a utilizar un DHT22 (sensor de humedad y temperatura) que, aunque no es lo más preciso del mundo, es suficientemente barato como para empezar a hacer pruebas. En el artículo de [atareao] se explica perfectamente como llevar a cabo esta medición. El propio sensor DHT22, una resistencia de 10k y tres cables para conectar al puerto GPIO de la Raspberry es odo lo que he necesitado.
