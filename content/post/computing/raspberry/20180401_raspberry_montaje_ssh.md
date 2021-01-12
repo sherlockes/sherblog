@@ -1,6 +1,6 @@
 ---
 title: "Raspberry Montaje y ssh"
-date: "2020-09-05"
+date: "2021-01-12"
 creation: "2018-04-01"
 description: "Primera fase con el montaje, la creación de la imagen y la habilitación del acceso ssh"
 thumbnail: "images/raspberry_logo.png"
@@ -24,7 +24,7 @@ Rápidamente me vengo arriba y entro el la web de Raspberry Pi para ver como emp
 
 Bueno, ya estamos metidos en el fregado...
 
-* Descargamos [Raspbian] (La versión Lite que pesa menos y no necesitamos entorno gráfico)
+* Descargamos [Raspberry Pi OS] (La versión Lite que pesa menos y no necesitamos entorno gráfico)
 * Para Windows descargamos [SD Card Formatter] para formatear la tarjeta de memoria
 * Para Windows descargamos [Win32 Disk Imager] para grabar la imagen en la tarjeta
 * Para Linux Mint descargamos [Balena Etcher]
@@ -87,7 +87,7 @@ Y hasta aquí el primer día, apagamos la Raspberry y mañana más...
 [PortScan]: http://www.the-sz.com/products/portscan
 [Putty]: http://www.putty.org
 [Raspberry]: https://www.amazon.es/gp/product/B01CD5VC92/ref=oh_aui_detailpage_o00_s01?ie=UTF8&psc=1
-[Raspbian]: https://www.raspberrypi.org/downloads/raspbian
+[Raspberry Pi OS]: https://www.raspberrypi.org/software/operating-systems/
 [SD Card Formatter]: https://www.sdcard.org/downloads/formatter_4
 [tarjeta micro sd]: https://www.amazon.es/gp/product/B013UDL58E/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1
 [Win32 Disk Imager]: https://sourceforge.net/projects/win32diskimager
