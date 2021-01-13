@@ -1,6 +1,6 @@
 ---
 title: "Termostato Raspberry"
-date: "2021-01-02"
+date: "2021-01-13"
 creation: "2020-11-12"
 description: "Proceso de la creación de un termostato mediante la raspberry en python"
 thumbnail: "/images/20201112_termostato_raspberry_00.jpg"
@@ -95,6 +95,14 @@ Con la lista de variables, su valor por defecto y la función para inicializar c
 La variables utilizadas en la inicialización de variables son:
 - variables - Diccionario con el nombre de variable y valor por defecto
 
+### Captura de la temperatura exterior ###
+De momento no he sido capaz de utilizarla para nada más allá de la mera representación de la misma. Extraigo la información de la web de la AEMET para obtener el valor de la temperatura exterior. Todo mediante la [clase Aemet] que puedes ver en mi repositorio de GitHub.
+
+Esta clase nos devolverá las siguientes variables:
+- hora - Momento de la última toma
+- temp_actual - Valor instantáneo de Tª obtenida
+- temp_media - Valor medio diaro de la Tª
+
 ### Captura de la temperatura interior ###
 Para tomar la temperatura que tengo en casa voy a utilizar un DHT22 (sensor de humedad y temperatura) que, aunque no es lo más preciso del mundo, es suficientemente barato como para empezar a hacer pruebas. En el artículo de [atareao] se explica perfectamente como llevar a cabo esta medición. El propio sensor DHT22, una resistencia de 10k y tres cables para conectar al puerto GPIO de la Raspberry es odo lo que he necesitado.
 
@@ -169,6 +177,7 @@ mdns-scan
 
 [atareao]: https://www.atareao.es/podcast/temperatura-con-la-raspberry/
 [Adafruit-DHT]: https://pypi.org/project/Adafruit-DHT/
+[clase Aemet]: https://github.com/sherlockes/SherloScripts/blob/master/python/etc/aemet.py
 [DIY]: http://developers.sonoff.tech/sonoff-diy-mode-api-protocol.html
 [eewlink]: https://sonoff.tech/ewelink
 [jota]: https://github.com/domoticafacilconjota/capitulos/blob/master/temporada_1/S01E23/rester-ewelink
