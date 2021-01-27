@@ -1,5 +1,5 @@
 publishDir = "../sherlockes.github.io"
-baseurl = "/"
+baseurl = "http://www.sherblog.pro/"
 title = "Sherblog"
 languageCode = "es"
 DefaultContentLanguage = "es"

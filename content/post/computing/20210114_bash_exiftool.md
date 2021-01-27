@@ -15,7 +15,7 @@ tags:
 draft: false
 weight: 5
 ---
-Hace un tiempo que Amazon ha restringido la subida automatizada de imágenes a [Amazon Photos], al hacerlo de forma manual me encuentro con el problema de tener que incrustar una fecha de captura a las fotografías que no la tienen.
+Hace un tiempo, Amazon ha restringido la subida automatizada de imágenes a [Amazon Photos], al hacerlo de forma manual me encuentro con el problema de tener que incrustar una fecha de captura a las fotografías que no la tienen.
 <!--more-->
 En un [post anterior] expliqué la artimaña que ahora hay que hacer para poder tener una copia de seguridad de todas las imágenes de [Google Photos] en el NAS. Hasta hace poco, estas imágenes se subían desde el NAS a [Amazon Photos] de forma automática, pero con los cambios en las condiciones del servicio ahora hay que hacerlo de forma manual. Lo que voy haciendo es, cuando se acaba el més, subo todas las fotografías del mismo a [Amazon Photos] pero me he encontrado con un problema.
 

@@ -14,7 +14,7 @@ tags:
 draft: true
 weight: 5
 ---
-Un pequeño resumen del post a modo de introducción
+Un pequeño resumen del post a modo de introducción de como...
 <!--more-->
 El desarrollo...# Instalando Terminalizer #
 

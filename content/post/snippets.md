@@ -25,7 +25,7 @@ for (const element of array) {
 
 Veamos si esto funciona para guardar.
 
-* buscar archivos sin "---" mediante el comando grep de forma recursiva
+* como buscar archivos sin "---" mediante el comando grep de forma recursiva
 ```
 grep -r -L "\-\-\-" *
 ```
