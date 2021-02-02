@@ -63,7 +63,7 @@ Este ti todos mis scripts los puedes encontrar en [mi repositorio de GitHub].
 
 
 [API development tools]: https://my.telegram.org/apps
-[articulo]: https://sherblog.pro/archivos-de-telegram-al-nas/
+[artículo]: https://sherblog.pro/archivos-de-telegram-al-nas/
 [@driveuploadbot]: https://t.me/driveuploadbot
 [Github]: https://github.com
 [mi repositorio de Github]: https://github.com/sherlockes/SherloScripts
