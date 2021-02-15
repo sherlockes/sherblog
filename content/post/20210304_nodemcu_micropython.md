@@ -62,8 +62,38 @@ Después de esto, si la instalación ha sido correcta, en la consola de comandos
 
 ### El montaje ###
 
-Como primer montaje quiero realizar una simple medición de temperatura
+Como primer montaje quiero realizar una simple medición de temperatura mediante una AM2302 que tan buenos resultados me está dando en la raspberry. El sensor lleva tres cables, el de alimentación, el de masa y la señal. aunque no lo tengo muy claro si es necesaria o no debido a la configuración interna del nodemcu, se recomienda unir la alimentación y la masa con una resistencia de 10K tal y como se muestra en la imagen.
+
 ![image_05]
+
+> Un detalle importante es que, aunque el cable de señal está conectado a la patilla D2 de la placa, esta se corresponde la GPIO4 del ESP8266 interno para la futura programacion del microcontrolador.
+
+![image_06]
+
+### Programación ###
+
+Con la placa conectada al usb del ordenador es el momento de abrir Thonny y en el menú "ejecutar" seleccionar el intérprete correspondiente a Micropython y el puerto correspondiente al que está conectado la placa tal y como se puede ver en la siguiente imagen.
+
+![image_07]
+
+Pulsaremos Ctrl + F2 para que en la consola inferior aparezca el propmt de micropython
+
+![image_08]
+
+> En algunas ocasiones da un error al detener y reinicializar el Back-end por que la placa está ocupada, en estos casos pulsando varias veces seguidas Ctrl+F2 desaparece el error.
+
+Crearemos un documento main.py que se ejecutará al arrancar el microcontrolador y que tendrá las siguientes funciones.
+
+- Contactarse a la red wifi
+- Contactarse al servidor MQTT
+- Captar la temperatura de la sonda
+- Enviar un mensaje con la temperatura
+- Esperar 30 segundos
+- Volver a captar, enviar y esperar
+
+Y así de forma indefinida añadiendo una capacidad de reconexión a la red wifi o servidor MQTT cuando alguno de los dos falle.
+
+El archivo lo puedes encontrar en mi repositorio de GitHub con la última versión actualizada.
 
 
 ### Links de interés ###
@@ -89,3 +119,6 @@ https://www.rototron.info/raspberry-pi-esp32-micropython-mqtt-dht22-tutorial/
 [image-03]: /images/20210304_nodemcu_micropython_03.jpg
 [image-04]: /images/20210304_nodemcu_micropython_04.jpg
 [image-05]: /images/20210304_nodemcu_micropython_05.jpg
+[image-06]: /images/20210304_nodemcu_micropython_06.jpg
+[image-07]: /images/20210304_nodemcu_micropython_07.jpg
+[image-08]: /images/20210304_nodemcu_micropython_08.jpg
