@@ -49,7 +49,7 @@ Con el paquete instalado, toca generar las credenciales Oauth2 desde [Google Clo
 * En la pestaña "Credentials" añadimos una nueva credencial del tipo "OAuth client ID"
 * Elegimos la opción "Desktop app" gphoto_client" y creamos la credencial
 * Descargamos la credencial creada y la renombramos como "client_secret.json"
-* Copiamos el arcivo a la carpeta ".config/gphotos-sync" del usuario que la vaya a ejecutar
+* Copiamos el archivo a la carpeta ".config/gphotos-sync" del usuario que la vaya a ejecutar
 
 Este proceso está descrito en [Gphotos-sync OAuth Creation]
 
@@ -61,9 +61,11 @@ pipenv run gphotos-sync TARGET_DIRECTORY
 
 fusermount -u ~/gphotos
 
+> Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS "read: Connection reset by peer" que he conseguido reparar habilitando nuevamente la conexión sftp del NAS
+
 [Google Cloud Platform]: https://console.cloud.google.com/cloud-resource-manager
 [Google Cloud Platform API]: https://console.cloud.google.com/apis/dashboard
-[gphotos-sync]: ttps://pypi.org/project/gphotos-sync/
+[gphotos-sync]: https://pypi.org/project/gphotos-sync/
 [Gphotos-sync OAuth Creation]: https://docs.google.com/document/d/1ck1679H8ifmZ_4eVbDeD_-jezIcZ-j6MlaNaeQiz7y0/edit?usp=sharing 
 [Photos Library API]: https://console.cloud.google.com/marketplace/product/google/photoslibrary.googleapis.com
 
