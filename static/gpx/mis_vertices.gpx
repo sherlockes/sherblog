@@ -3,6 +3,9 @@
 <wpt lat="40.5915883" lon="-2.8167506">
 <name>berninches</name>
 </wpt>
+<wpt lat="40.3499125" lon="0.3334183">
+<name>bota</name>
+</wpt>
 <wpt lat="41.61045022" lon="-0.95416909">
 <name>cabezo_casellas</name>
 </wpt>
@@ -21,6 +24,9 @@
 <wpt lat="41.1192068" lon="-0.4532847">
 <name>cuervo</name>
 </wpt>
+<wpt lat="40.280448" lon="0.2827039">
+<name>ebri</name>
+</wpt>
 <wpt lat="41.5456" lon="-1.1194">
 <name>el_castellano</name>
 </wpt>
@@ -29,6 +35,9 @@
 </wpt>
 <wpt lat="41.6538822" lon="-0.7427812">
 <name>frances</name>
+</wpt>
+<wpt lat="40.73041335" lon="-2.75182607">
+<name>galiana</name>
 </wpt>
 <wpt lat="40.5539158" lon="-2.7665518">
 <name>laguna</name>
@@ -110,6 +119,9 @@
 </wpt>
 <wpt lat="41.5108" lon="-1.10933">
 <name>valdejimeno</name>
+</wpt>
+<wpt lat="40.6678374" lon="-2.7701261">
+<name>valdelagua</name>
 </wpt>
 <wpt lat="41.4370004" lon="-0.3517226">
 <name>valdelosjubos</name>

@@ -1,6 +1,6 @@
 ---
-title: "Como sincronizar las imágenes de Google Photos desde la Raspberry"
-date: "2020-12-03"
+title: "Sincronizar Google Photos desde la Raspberry"
+date: "2021-02-18"
 creation: "2020-12-03"
 description: "Como sincronizar las imágenes de Google Photos desde la Raspberry"
 thumbnail: "/images/20201203_sincronizar_gphotos_raspberry_00.jpg"
@@ -14,7 +14,7 @@ categories:
 tags:
   - "bash"
   - "google photos"
-draft: true
+draft: false
 weight: 5
 ---
 Hasta ahora había sincronizado mi galería de Google Fotos con el NAS desde el pc de sobremesa con Linux Mint, voy a intentar hacerlo desde la Raspberry para no tener que encender el pc.
@@ -53,21 +53,24 @@ Con el paquete instalado, toca generar las credenciales Oauth2 desde [Google Clo
 
 Este proceso está descrito en [Gphotos-sync OAuth Creation]
 
+LLegados a esta punto ya sólo resta ejecutar el comando en el entorno virtual para que todas las fotos sean descargadas al directorio de destino
 
-cd <installed directory>
-pipenv run gphotos-sync TARGET_DIRECTORY
+```
+pipenv run gphotos-sync directorio_destino
+```
 
------- 4/1AY0e-g7mO0YmbBvGwXqRWZkdkMDDSyZXr7eNqT1_i0mTxExQNv2ckZX88d8 ------
-
-fusermount -u ~/gphotos
+En mi caso, aunque el trabajo lo realiza la raspberry, las fotos quedan almacenadas en una carpeta del NAS que ha sido montada mediante sshfs y llave público/privada gracias a un [script] que se ejecuta diariamente mediante cron.
 
 > Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS "read: Connection reset by peer" que he conseguido reparar habilitando nuevamente la conexión sftp del NAS
+
+Con esto ya tenemos sincronizada nuestra galería de Google Photos en nuestro NAS. Seguro que esto es capaz de hacerlo el NAS sin ayuda de la Raspberry, pero esto será para otro día...
 
 [Google Cloud Platform]: https://console.cloud.google.com/cloud-resource-manager
 [Google Cloud Platform API]: https://console.cloud.google.com/apis/dashboard
 [gphotos-sync]: https://pypi.org/project/gphotos-sync/
 [Gphotos-sync OAuth Creation]: https://docs.google.com/document/d/1ck1679H8ifmZ_4eVbDeD_-jezIcZ-j6MlaNaeQiz7y0/edit?usp=sharing 
 [Photos Library API]: https://console.cloud.google.com/marketplace/product/google/photoslibrary.googleapis.com
+[script]: https://github.com/sherlockes/SherloScripts/blob/master/bash/gphotos-sync.sh
 
 
 [Image-01]: /images/20201203_sincronizar_gphotos_raspberry_01.jpg

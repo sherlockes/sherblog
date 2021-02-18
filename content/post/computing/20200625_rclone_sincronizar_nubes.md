@@ -1,6 +1,6 @@
 ---
 title: "Sincronizar nubes con rclone"
-date: "2020-06-25"
+date: "2021-02-18"
 creation: "2020-06-25"
 description: "El método que utilizo para sincronizar dos nubes con mi contenido multimedia por si una de las dos desaparece."
 thumbnail: "images/20200625_rclone_sync_clouds_00.jpg"
@@ -13,15 +13,15 @@ categories:
 tags:
   - "rclone"
   - "google drive"
-draft: true
+draft: false
 weight: 5
 ---
-Recientemente y gracias a [Andrés Ramos] he dado con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos "falla".
+Hace un tiempo y gracias a [Andrés Ramos] di con un enlace a una web para crear unidades compartidas de Google Drive con espacio ilimitado y la voy a utilizar para sincronizar la nube en la guardo el contenido multimedia por si alguna de las dos "falla".
 <!--more-->
 
 ## Creando una unidad compartida ##
 
-Gracias a al [enlace] de Andrés es posible crear una unidad compartida de tamaño ilimitado de Google Drive sin más que introducir el nombre que le quiero dar, la cuenta de Google en la que la quiero incluir (No he usado mi cuenta principal sino otra que tengo para estas ocasiones) y seleccionar la universidad de San Francisco (No se como irán las demás opciones). Con solo eso ya tenemos creada una unidad compartida (Para nada privada) con espacio ilimitado.
+Gracias a al [enlace] de Andrés (y que ahora no funciona) era posible crear una unidad compartida de tamaño ilimitado de Google Drive sin más que introducir el nombre que le quiero dar, la cuenta de Google en la que la quiero incluir (No he usado mi cuenta principal sino otra que tengo para estas ocasiones) y seleccionar la universidad de San Francisco (No se como irán las demás opciones). Con solo eso ya tenemos creada una unidad compartida (Para nada privada) con espacio ilimitado.
 
 ![Imagen_01]
 
