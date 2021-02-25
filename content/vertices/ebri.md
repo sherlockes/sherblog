@@ -1,6 +1,6 @@
 ---
 title: "Vértice geodésico Ebri"
-date: "2021-02-18"
+date: "2021-02-17"
 creation: "2015-07-22"
 description: "Vértice geodésico Ebri"
 thumbnail: "images/vertice.jpg"

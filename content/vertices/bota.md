@@ -1,6 +1,6 @@
 ---
 title: "Vértice geodésico Bota"
-date: "2021-02-18"
+date: "2021-02-17"
 creation: "2005-07-22"
 description: "Vértice geodésico Bota"
 thumbnail: "images/vertice.jpg"

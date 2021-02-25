@@ -12,6 +12,12 @@
 <wpt lat="41.5785479" lon="-0.8925093">
 <name>cabezo_de_las_zorras</name>
 </wpt>
+<wpt lat="40.7571491" lon="-2.779528">
+<name>cabezuela</name>
+</wpt>
+<wpt lat="40.59183291" lon="-2.75254915">
+<name>casa_vieja</name>
+</wpt>
 <wpt lat="41.61946" lon="-1.0344">
 <name>collado_ladrones</name>
 </wpt>
@@ -38,6 +44,9 @@
 </wpt>
 <wpt lat="40.73041335" lon="-2.75182607">
 <name>galiana</name>
+</wpt>
+<wpt lat="40.6056189" lon="-2.5949051">
+<name>iglesia</name>
 </wpt>
 <wpt lat="40.5539158" lon="-2.7665518">
 <name>laguna</name>
@@ -81,6 +90,9 @@
 <wpt lat="41.3262571" lon="-0.3048359">
 <name>puntales</name>
 </wpt>
+<wpt lat="40.5878147" lon="-2.6858521">
+<name>puntal</name>
+</wpt>
 <wpt lat="41.4302334" lon="-0.2613119">
 <name>purburell</name>
 </wpt>
@@ -110,6 +122,9 @@
 </wpt>
 <wpt lat="41.451053" lon="-0.8252525">
 <name>sillero</name>
+</wpt>
+<wpt lat="40.6588998" lon="-2.5699697">
+<name>tetas</name>
 </wpt>
 <wpt lat="41.3158493" lon="-0.4597003">
 <name>tres_mojones</name>
