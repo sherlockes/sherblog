@@ -1,6 +1,6 @@
 ---
 title: "Mis vértices geodésicos en Hugo"
-date: "2021-02-18"
+date: "2021-03-01"
 creation: "2020-05-12"
 description: "Todo lo que he tenido que aprender para poder incrustar de una forma sencilla, ágil y digna mis vértices en Hugo"
 thumbnail: "images/20200512_mis_vertices_00.jpg"
@@ -13,7 +13,7 @@ categories:
   - "vertices"
 tags:
   - "shortcodes"
-draft: true
+draft: false
 weight: 5
 ---
 Hace más de dos años desde que visité mi ultimo vértice geodésico. Durante todo este tiempo el proyecto que empecé en el ya lejano 2008 lo he tenido aparcado por unos cuantos motivos...
@@ -54,7 +54,7 @@ Con esto tengo material suficiente para crear un [shortcode] en forma de archivo
 El archivo [mapa_vertice.html] de momento no voy a explicarlo aquí con todos los detalles ya que puedes verlo en mi [repositorio] de GitHub. La finalidad es que incluyendo en el post del vértice
 
 ```
-{{ mapa_vertice }}
+{{ mapa_ vertice }}
 ```
 ya se genere todo el contenido de forma automática atendiendo a los parámetros del post.
 
@@ -69,7 +69,7 @@ Para representar los vértices en el mapa necesito un archivo en el que estén i
 </wpt>
 </gpx>
 ```
-Cada nodo "wpt" (waypoint) representará un vértice y sóloes cuestión de incluir tantos como sean necesarios. Anteriormente ya tenía creado un archivo similar a este pero en el formatio propietariode Google kml y la experiencia me dice que, aunque no es complicada la realización si resulta tedioso tener que volver a información del vértice en un nuevo archivo.
+Cada nodo "wpt" (waypoint) representará un vértice y sóloes cuestión de incluir tantos como sean necesarios. Anteriormente ya tenía creado un archivo similar a este pero en el formatio propietariode Google kml y la experiencia me dice que, aunque no es complicada la realización si resulta tedioso tener que volver a información del v��rtice en un nuevo archivo.
 
 Por lo anterior he creado un script en bash que extrae la información de todos los archivos en la carpeta "vértices" y genera el archivo gpx.
 
@@ -168,7 +168,7 @@ De esta forma tan simple el script:
 Así tenemos un listado con una línea por cada uno de los vértices que podremos incluir en cualquier artículo de la web con únicamente escribir
 
 ```
-{{< lista_vertices >}}
+{{ lista_vertices }}
 ```
 
 ### Representación en un mapa ###
@@ -198,11 +198,12 @@ Con el fin de incluir de forma dinámica la clase y hora de estilos de la librer
 
 De esta manera, cuando el motor de [Hugo] vaya a publicar un artículo incrustará tambien la clase y hoja de estilos de openlayers sólo si estos están incluidos dentro de los parámetros "js" y "css" (con el consiguiente ahorro de ancho de banda). Adicionalmente ajustará el mapa a mostrar a todo el ancho de la web y al alto que se incluya como parámetro en cada artículo particular.
 
-Nuevamente haré uso de los [shortcodes]de [Hugo] para crear el archivo [mapa_vertice.html] con lo que la incusión de un mapa con la información del vértice geodésico en un artículo se realizará con la siguiente línea.
+Nuevamente haré uso de los [shortcodes] de [Hugo] para crear el archivo [mapa_vertice.html] con lo que la incusión de un mapa con la información del vértice geodésico en un artículo se realizará con la siguiente línea.
 
 ```
-{{< mapa_vertice >}}
+{{ mapa_vertice }}
 ```
+Puedes encontrar todo el código en mi [repositorio] de GitHub.
 
 ### Almacenamiento de las imágenes ###
 Este punto también ha resultado un profundo dolor de cabeza. Hasta su cierre tenía publicadas todas las imágenes y panorámicas en Panoramio. Las sigo teniendo en Google Photos pero no he sido capaz de incrustarlas en el blog desde aquí por lo que me he visto obligado a buscar un nuevo alojamiento para todas estas imágenes.
@@ -210,15 +211,13 @@ Este punto también ha resultado un profundo dolor de cabeza. Hasta su cierre te
 - *Usar Internet Archive como alojamiento* - Lo intenté, pero el modo de subir las fotografías, gestionarlas y organizarlas es simplemente pésimo por lo que termine desestimando está opción.
 - *Usar Imgur como alojamiento* - Después de comprobar en funcionamiento y capacidad de varios servicios web he probado por escoger está opción. El espacio de almacenamiento es ilimitado con el límite de 20mb por fotografía y 50 fotografías por hora lo cual es más que suficiente para mis necesidades.
 
-### Conclusiones ###
-He quedado plenamente satisfecho con este desarrollo
 
 [Hugo]: https://gohugo.io/
 [mapa_vertice.html]: https://github.com/sherlockes/SherloScripts/blob/master/hugo/shortcodes/mapa_vertice.html
 [mis_vertices.gpx]: /gpx/mis_vertices.gpx
-[openlayers]:
+[openlayers]: https://openlayers.org
 [repositorio]: https://github.com/sherlockes/SherloScripts
 [shortcodes]: https://gohugo.io/content-management/shortcodes/
 [mapa_vertice.html]: https://github.com/sherlockes/SherloScripts/blob/master/hugo/shortcodes/mapa_vertice.html
 
-[image-01]: images/20200512_mis_vertices_01.jpg
+[image-01]: /images/20200512_mis_vertices_01.jpg

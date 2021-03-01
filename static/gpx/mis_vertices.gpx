@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <gpx creator="GPS Visualizer http://www.gpsvisualizer.com/" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="41.717" lon="-0.8">
+<name>alto_del_molino</name>
+</wpt>
 <wpt lat="40.5915883" lon="-2.8167506">
 <name>berninches</name>
 </wpt>
@@ -14,6 +17,9 @@
 </wpt>
 <wpt lat="40.7571491" lon="-2.779528">
 <name>cabezuela</name>
+</wpt>
+<wpt lat="41.756" lon="-0.724">
+<name>campillo</name>
 </wpt>
 <wpt lat="40.59183291" lon="-2.75254915">
 <name>casa_vieja</name>
@@ -59,6 +65,12 @@
 </wpt>
 <wpt lat="41.444556" lon="-0.9194335">
 <name>loco</name>
+</wpt>
+<wpt lat="41.7405" lon="-0.9875">
+<name>loma_de_utebo</name>
+</wpt>
+<wpt lat="41.723" lon="-0.703">
+<name>loma_lobera</name>
 </wpt>
 <wpt lat="41.3377182" lon="-0.2176951">
 <name>mudevar</name>
@@ -107,6 +119,9 @@
 </wpt>
 <wpt lat="41.527" lon="-0.957">
 <name>salinas</name>
+</wpt>
+<wpt lat="41.764" lon="-0.77">
+<name>san_cristobal</name>
 </wpt>
 <wpt lat="41.2603003" lon="-0.5762267">
 <name>san_martin</name>
