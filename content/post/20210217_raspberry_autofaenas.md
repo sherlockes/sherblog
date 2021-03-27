@@ -71,18 +71,50 @@ Es el corazon de las descargas y encargado de vigilar el canal para descargar to
 ```
 @hourly ~/SherloScripts/bash/teledown_move.sh
 ```
-La raspberry está encendida todo el día, pero el NAS no, este script seejecuta cada hora para comprobar si el NAS está encendido y mover a este los archivos descargados por la raspberry.
+La raspberry está encendida todo el día, pero el NAS no, este script se ejecuta cada hora para comprobar si el NAS está encendido y mover a este los archivos descargados por la raspberry.
+
+### Blog ###
+Esta placa de menos de 40€ también es la encargada de, a partir del contenido alojado en una carpeta de mi cuenta en la nube de Google Drive, publicar en GitHub el contenido estático de este Blog.
+
+#### publish.sh ####
+```
+@hourly ~/SherloScripts/bash/publish.sh
+```
+Cada hora, busca nuevo contenido en Google Drive para publicar en el Blog o maquetas como post. Genera el ontenido estático en Hugo y lo sincroniza con el repositorio de Github.
+
+#### hugo.sh ####
+```
+@daily ~/SherloScripts/bash/hugo.sh
+```
+Cada día, comprueba e instala la posible actualización de Hugo para instalar en la propia Raspberry
 
 ### sherloscripts_push.sh ###
 ```
 @daily ~/SherloScripts/bash/sherloscripts_push.sh
 ```
-Gracias a [Insync] y la integración de Google Drive con Android, me resulta mucho más
+Gracias a [Insync] y la integración de Google Drive con Android, me resulta mucho más sencllo y practico trabajar sobre una sincronización con la nube que sobre un repositorio. Este Script mueve los cambios todos los días a las 0:00 de la nube de Google al repositorio de GitHub.
 
+Además comprueba también el estado de varias nubes donde tengo alojado parte de mi colección multimedia y realiza una sincronización entre ellas.
 
+### radares.sh ###
+```
+@weekly ~/SherloScripts/bash/radares.sh
+```
+Una vez a la semana, este script descarga la base de radares de tráfico de www.todopoi.es, quita todo lo innecesario y guarda el resto en una carpeta de Google Drive desde donde Tasker para Android hará el resto para tener al día la detección de radares cundo voy en el coche.
 
+### gphotos-sync.sh ###
+```
+30 0 * * * ~/SherloScripts/bash/gphotos-sync.sh
+```
+Hubo un tiempo mejor en el que el Ds216+II de Synology con sus utilidades propias era capaz de sincronizar con una carpeta en el mismo el contenido de Google Photos y esa misma carpeta sincronizarla con Amazón Drive para no tener "todas manzanas en la misma cesta".
 
-![image_01]
+Ahora, ambos han complicado las cosas y hasta ahora sólo he sido capaz de que todos los días a las 0:30 se realice una sincronización del contenido de Google Photos mediante Gphotos-Sync. en una carpeta del NAS gracias a este Script.
+
+### tiempo.py ###
+```
+0 8,14 * * * ~/SherloScripts/python/tiempo.py
+```
+Todos los días a las 8:00 y a las 14:00, este script recoge la información del tiempo de la Aemet y me lo envía al teléfono mediante un mensaje de Telegram.
 
 [crontab guru]: https://crontab.guru
 [descargar archivos de telegram]: https://sherblog.pro/descargar-archivos-de-telegram
@@ -90,5 +122,3 @@ Gracias a [Insync] y la integración de Google Drive con Android, me resulta muc
 [mosquitto]: https://mosquitto.org
 [telegram-download-daemon]: https://github.com/alfem/telegram-download-daemon
 [termostato en la raspberry]: https://sherblog.pro/termostato-raspberry/
-
-[image-01]: /images/20210217_raspberry_autofaenas_01.jpg
