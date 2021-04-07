@@ -13,13 +13,20 @@ categories:
 tags:
 - "bash"
 - "synology"
+- "linux"
 draft: true
 weight: 5
 ---
-Resumen de introducción
+Hoy toca montar una carpeta del NAS en el pc mediante sshfs para correr sobre ella un script, resulta sencillo pero hay que tener en cuenta unas peculiaridades...
 <!--more-->
 
-> Imprescindible para que funcione el comando sobre el NAS que esté habilitado el servidor sftp desde "Panel de control - Servicios de archivos - FTP - Habilitar servicio SFTP"
+Montar una carpeta remota en un directorio local trabajando en Linux es una tarea sencilla gracias a sshfs. En primer lugar es necesario instalar las utilidad en el sistema (En Linux Mint se resuelve con una sola línea en la terminal).
+
+sudo apt install sshfs
+
+Llegados a este punto resulta interesante tener un acceso al NAS mediante llave publico-privada tal y como detallo en este [artículo] para evitar la tediosa introducción de contraseñas.
+
+> Imprescindible para que funcione el comando sobre el NAS que esté habilitado el acceso ssh y el servidor sftp desde "Panel de control - Servicios de archivos - FTP - Habilitar servicio SFTP"
 
 sudo sshfs -o allow_other,default_permissions usuario@ip_del_nas:/carpeta
 
