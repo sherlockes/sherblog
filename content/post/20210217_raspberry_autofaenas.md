@@ -15,7 +15,7 @@ tags:
 draft: true
 weight: 5
 ---
-La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar las que hace ella sola cuando yo no estoy delante.
+La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ahora las que hace ella sola cuando yo no estoy delante.
 <!--more-->
 
 Como todas las automatizaciones que tengo en la Raspberry son mediante cron, sacarlas a flote es tan simple como ejecutar `crontab -l` para obtener lo siguiente.
