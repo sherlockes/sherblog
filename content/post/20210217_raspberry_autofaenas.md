@@ -20,19 +20,8 @@ La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ah
 
 Como todas las automatizaciones que tengo en la Raspberry son mediante cron, sacarlas a flote es tan simple como ejecutar `crontab -l` para obtener lo siguiente.
 
-```
-@reboot ~/SherloScripts/python/termoflask/init.sh
-@reboot sleep 15 && ~/SherloScripts/bash/teledown.sh
-@reboot sleep 15 && ~/SherloScripts/python/termoflask/mqtt.py
-@daily ~/SherloScripts/bash/sherloscripts_push.sh
-@weekly ~/SherloScripts/bash/radares.sh
-@daily ~/SherloScripts/bash/hugo.sh
-30 0 * * * ~/SherloScripts/bash/gphotos-sync.sh
-@hourly ~/SherloScripts/bash/publish.sh
-@hourly ~/SherloScripts/bash/teledown_move.sh
-0 8,14 * * * ~/SherloScripts/python/tiempo.py
-*/5 * * * * ~/SherloScripts/python/termoflask/termo.py
-```
+{{< texto_externo files/crontab.txt >}}
+
 Si no tienes claro como realizar la programación en cron, es muy recomendable visitar [crontab guru] para realizar unas pruebas con el tema de los números y asteriscos para determinar la frecuencia de realización de la tarea.
 
 ### Termostato ###
