@@ -13,7 +13,7 @@ categories:
   - "linux"
 tags:
   - "gimp"
-  - "gtumb"
+  - "gthumb"
   - "darktable"
   - "trimage"
   - "linux"

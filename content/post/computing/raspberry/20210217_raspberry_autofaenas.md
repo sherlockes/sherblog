@@ -1,6 +1,6 @@
 ---
 title: "Que hace la raspberry sin mi"
-date: "2021-03-25"
+date: "2021-04-28"
 creation: "2021-02-17"
 description: "Este es un pequeño resumen de lo que la Raspberry hace por mi cuando yo no estoy delante de ella"
 thumbnail: "/images/20210217_raspberry_autofaenas_00.jpg"
@@ -12,7 +12,7 @@ categories:
 - "raspberry"
 tags:
 - "bash"
-draft: true
+draft: false
 weight: 5
 ---
 La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ahora las que hace ella sola cuando yo no estoy delante.
@@ -20,7 +20,7 @@ La Raspberry me sirve para hacer muchas cosas aunque aquí sólo voy a contar ah
 
 Como todas las automatizaciones que tengo en la Raspberry son mediante cron, sacarlas a flote es tan simple como ejecutar `crontab -l` para obtener lo siguiente.
 
-{{< texto_externo files/crontab.txt >}}
+{{< texto_externo "/files/crontab.txt" >}}
 
 Si no tienes claro como realizar la programación en cron, es muy recomendable visitar [crontab guru] para realizar unas pruebas con el tema de los números y asteriscos para determinar la frecuencia de realización de la tarea.
 

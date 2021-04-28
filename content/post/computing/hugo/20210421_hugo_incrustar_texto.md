@@ -1,6 +1,6 @@
 ---
 title: "Incrustar texto externo en Hugo"
-date: "2021-04-21"
+date: "2021-04-28"
 creation: "2021-04-21"
 description: "Como incrustar texto de un archivo externo dentro de un post en Hugo"
 thumbnail: "/images/20210421_hugo_incrustar_texto_00.jpg"
@@ -12,9 +12,8 @@ categories:
 - "hugo"
 tags:
 - "bash"
-- "hugo"
 - "shorcodes"
-draft: true
+draft: false
 weight: 5
 ---
 Hace tiempo que vengo pensando en la capacidad de poder introducir texto desde un archivo externo dentro de los post que publico en [Hugo]. Hoy se me ha encendido la bombilla.
@@ -25,7 +24,7 @@ Una potente herramienta que posee [Hugo] es la posibilidad de uso de [Shortcodes
 Es posible utilizar esta característica para crear un Shortcode que incluya en el post el texto contenido en un archivo de texto externo sin más que escribir una línea de código.
 
 ```
-<pre><code><embed src="/{{ index .Params 0 }}"></code></pre>
+<pre><code><embed src="{{.Get 0}}" width="100%"></code></pre>
 ```
 
 Esta línea la incluiremos en un archivo llamado "texto_externo.html" que guardaremos en la carpeta "layouts/shortcodes"
@@ -35,10 +34,10 @@ Esta línea la incluiremos en un archivo llamado "texto_externo.html" que guarda
 Ahora ya sólo resta insertar el siguiente código en la zona del post o la página donde queramos incluir el texto del archivo externo.
 
 ```
-{{< texto_externo archivo.txt >}}
+{{< texto_externo "/archivo.md" >}}
 ```
 
-Para que se cargue correctamente, el archivo deberá alojarse en la carpeta "static".
+Para que se cargue correctamente, el archivo deberá alojarse en la carpeta "static" ya que es lo que [Hugo] entiende como la raiz de los documentos en el Blog.
 
 
 [Hugo]: https://gohugo.io

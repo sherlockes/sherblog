@@ -8,10 +8,11 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "Productividad"
+  - "productividad"
+  - "sherver"
 tags:
-  - "Synology"
-  - "Zerotier"
+  - "synology"
+  - "zerotier"
 draft: false
 weight: 5
 ---

@@ -9,7 +9,7 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "computing"
+  - "raspberry"
   - "productividad"
 tags:
   - "bash"

@@ -1,7 +1,7 @@
 ---
 title: "Raspberry Pi desde cero"
 #date: "2018-7-11"
-update: "2019-11-11"
+update: "2021-04-28"
 description: "Un resumen de lo que está siendo mi aprendizaje en el mundo de las Raspberry Pi"
 thumbnail: "images/20180626_raspberry_raspberry_desde_cero_00.png"
 disable_comments: true
@@ -44,6 +44,8 @@ De esta forma, con el servidor web montado sobre la Raspberry podría tener apag
 [Docker]({{<relref"20180601_raspberry_docker.md">}})\
 [Moodle con MoodleBox]({{<relref"20200215_raspberry_moodle.md">}})\
 [Termostato casero]({{<relref"20201112_raspberry_termostato.md">}})\
+[Sincronizar Google Photos]({{<relref"20201203_raspberry_sincronizar_gphotos.md">}})\
+[Mi uso de crontab]({{<relref"20210217_raspberry_autofaenas.md">}})\
 Lo siguiente... Hugo
 
 ### Enlaces de interés

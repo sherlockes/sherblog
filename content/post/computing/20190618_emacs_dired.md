@@ -9,9 +9,10 @@ authorbox: false
 toc: true
 mathjax: false
 categories:
-  - "emacs"
+  - "computing"
 tags:
   - "dired"
+  - "emacs"
 draft: false
 weight: 5
 ---

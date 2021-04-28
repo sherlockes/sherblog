@@ -1,6 +1,6 @@
 ---
 title: "Raspberry Montaje y ssh"
-date: "2021-01-12"
+date: "2021-04-28"
 creation: "2018-04-01"
 description: "Primera fase con el montaje, la creación de la imagen y la habilitación del acceso ssh"
 thumbnail: "images/raspberry_logo.png"
@@ -58,6 +58,8 @@ Ya está todo listo para conectar la Raspberry al router mediante el cable de re
     1. Instalar la aplicación "nmap"'sudo apt install nmap'
     1. Listar todas las ip's activas de la red 'sudo nmap -sn 192.168.1.0/24'
   * Para conectarme mediante ssh uso la terminal
+  
+> Junto con nmap resulta muy interesante las instalación de "nast" y obtener todas las IP de la red local junto con su MAC gracias al comando "sudo nast -m"
 
 ![Imagen_02]
 

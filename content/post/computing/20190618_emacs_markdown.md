@@ -9,9 +9,10 @@ authorbox: false
 toc: false
 mathjax: false
 categories:
-  - "Emacs"
+  - "computing"
 tags:
-  - "Markdown"
+  - "markdown"
+  - "emacs"
 draft: false
 weight: 5
 ---
@@ -58,7 +59,7 @@ Con todo lo anterior hemos modificado el archivo de configuración ".emacs" de f
  '(markdown-split-window-direction (quote right))
 ```
 
-## Links e imágenes##
+## Links e imágenes ##
 Para añadir links dentro del texto tenemos el comando <kbd>C-c C-l</kbd> y para introducir imágenes <kbd>C-c C-i</kbd>, tras presionarlo podemos insertar la ruta del enlace o imagen o bien la referencia del mismo en caso de que agrupemos todos los enlaces e imágenes al final del archivo.
 
 ## Encabezados ##

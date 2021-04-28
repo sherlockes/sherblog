@@ -1,6 +1,6 @@
 ---
 title: "Renombrado de lotes de archivos en Emacs"
-date: "2021-04-26"
+date: "2021-04-28"
 creation: "2021-04-26"
 description: "Como renombrar un conjunto de archivos al mismo tiempo gracias a Emacs"
 thumbnail: "/images/20210426_emacs_renombrado_lotes_00.jpg"
@@ -12,7 +12,8 @@ categories:
 - "computing"
 tags:
 - "emacs"
-draft: true
+- "regexp"
+draft: false
 weight: 5
 ---
 Cuando era usuario de windows, usaba [Renamer] para cambiar el nombre de varios archivos en lote, en linux todavía no he encontrado una aplicación que me guste así que lo hago gracias a Emacs de una forma rápida.
@@ -35,7 +36,7 @@ Hay que reconocer que no es nada intuitivo pero, na vez conocido el método es r
 
 Para numerar autoincrementalmente los archivos que deseemos la cosa se complica un poco más ya que debemos hacer uso de expresiones regulares.
 
-> Muy recomendable haer el tutorial de [RegexOne] como introducción a las expresiones regulares aunque toque luchar con el inglés.
+> Muy recomendable hacer el tutorial de [RegexOne] como introducción a las expresiones regulares aunque toque luchar con el inglés.
 
 Los pasos son similares al caso anterior sólo que usando regex
 
@@ -47,7 +48,7 @@ Los pasos son similares al caso anterior sólo que usando regex
 1. Reemplazar todos -> !
 1. Finalizar el modo de renombrado -> Alt+x wdired-finish-edit (C-c C-c)
 
-El asunto se complica un poco ya que dentro de Emacs el uso de Regexp es n poco peculiar tal y como se puede leer en el artículo [Emacs Regexp]. A continuación dejo unos ejemplos que he utilizado.
+El asunto se complica un poco ya que dentro de Emacs el uso de Regexp es un poco peculiar tal y como se puede leer en el artículo [Emacs Regexp]. A continuación dejo unos ejemplos que he utilizado.
 
 - Separar número en temporada y episodio.
 De "168 loquesea.avi" a "1x68 loquesea.avi"
