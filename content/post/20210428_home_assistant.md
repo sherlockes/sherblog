@@ -60,8 +60,13 @@ switch:
     number: GPIO0
     inverted: True
 ```
-
 - Guardar y subir y ya está nuestro relé listo.
+
+#### Regulación de temperatura ####
+Tenemos un senson de temperatura y un rele ya configurados gracias a ESPHome
+
+
+
 
 ![image_02]
 
