@@ -20,6 +20,56 @@ Resumen de introducción
 <!--more-->
 El primer paso es acceder a la web de [Home Assistant] y sigo los pasos de [instalación en raspberry] para novatos (La versión para Docker la probé hace un tiempo y me dió algún fallo con el modo supervisor y los addons que me impidió seguir adelante).
 
+### Instalando Home assistant ###
+
+#### Instalación sobre Debian 10 en Raspberry ####
+He realizado este proceso sobre una Pi4 de 4Gb con un stick ubs para el arranque siguiendo el [post de Tecnosanvaras] y realizando los siguientes pasos:
+
+1. Descargar la ultima versión de [Debian para Raspberry]
+1. Descomprimir la imagen
+1. Grabar la imagen en el stick usk con [Balena Etcher]
+1. Conectar la Raspberry a un teclado, monitor y red cableada
+1. Insertar el stick usb y arrancar la Raspberry
+1. Tras el arranque, logearnos como "root"
+1. Actualizar las dependencias - `apt update`
+1. Instalar sudo - `apt install sudo`
+1. Crear un nuevo usuario - `adduser TU_USUARIO`
+1. Añadir el usuario creado al grupo sudo - `usermod -aG sudo TU_USUARIO`
+1. Averiguar la IP de la Raspberry - `ip addr show eth0`
+1. Reiniciar la raspberry
+
+> Importante no realizar un "apt upgrade" de la distribución ya que, a día de hoy (20210517), presenta un bug con el aranque desde usb que hace que se cuelgue el sistema.
+
+Con esto ya sólo resta instalar una utilidades, docker y el supervisor de home assistant mediante las siguientes líneas de código.
+
+```
+sudo -i
+
+apt-get install -y software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager
+
+systemctl disable ModemManager
+
+systemctl stop ModemManager
+
+curl -fsSL get.docker.com | sh
+
+curl -sL "https://raw.githubusercontent.com/Kanga-Who/home-assistant/master/supervised-installer.sh" | bash -s -- -m raspberrypi4-64
+```
+
+Con la instalación realizada, ya estamos en condiciones de acceder a la IP que se nos muestra al terminar el script a través del puerto 8123.
+
+```
+[info] 
+[info] Home Assistant supervised is now installed
+[info] First setup will take some time, when it's ready you can reach it here:
+[info] http://192.168.1.104:8123
+[info] 
+```
+
+
+
+
+
 
 ### Añadiendo microcontroladores ESP ###
 Desde el apartado "supervisor" accederemos a la tienda de complementos, donde buscaremos "ESPHome" para instalar el correspondiente módulo.
@@ -70,8 +120,11 @@ Tenemos un senson de temperatura y un rele ya configurados gracias a ESPHome
 
 ![image_02]
 
+[Balena Etcher]: https://www.balena.io/etcher/
+[Debian para Raspberry]: https://raspi.debian.net/tested-images/
 [Home Assistant]: https://www.home-assistant.io
-[instalación en raspberry]: https://www.home-assistant.io/installation/raspberrypi 
+[instalación en raspberry]: https://www.home-assistant.io/installation/raspberrypi
+[post de Tecnosanvaras]: https://tecnosanvaras.es/instalacion-de-ha-supervisded-en-raspberry-pi-con-debian-10/
 
 [image-01]: /images/20210428_home_assistant_01.jpg
 [image-02]: /images/20210428_home_assistant_02.jpg
