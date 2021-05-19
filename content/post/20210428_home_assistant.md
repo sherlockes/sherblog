@@ -1,8 +1,8 @@
 ---
-title: "Primera experiencia con Home Assistant"
+title: "Home assistant desde cero con Raspberry"
 date: "2021-04-28"
 creation: "2021-04-28"
-description: "Descripción"
+description: "Es este post incluyo mis aprendizajes con Home Assistant"
 thumbnail: "/images/20210428_home_assistant_00.jpg"
 disable_comments: true
 authorbox: false
@@ -21,6 +21,24 @@ Resumen de introducción
 El primer paso es acceder a la web de [Home Assistant] y sigo los pasos de [instalación en raspberry] para novatos (La versión para Docker la probé hace un tiempo y me dió algún fallo con el modo supervisor y los addons que me impidió seguir adelante).
 
 ### Instalando Home assistant ###
+
+#### Instalación de la distribución completa ####
+1. En el artículo de [instalación en raspberry] buscamos el enlace para la versión que necesitamos
+1. Grabar la imagen en el stick usk con [Balena Etcher]
+1. Montar el stick en la raspberry, conectar cable de red y alimentación y encender
+1. Esperamos unos minutos y ya se puede acceder a http://IP_raspberry:8123
+
+> Si no sabes como descubrir la IP con la que la raspberry se ha conectado a la red puedes visitar mi [post] para obtener alguna respuesta.
+
+##### Acceso ssh (Terminal) #####
+1. 
+1. Acceder a la tiemda de complementos en el panel del supervisor
+1. Instalar "Terminal & ssh"
+1. En "Configuración - Opciones" introducir una contraseña en "password: "
+1. En "Configuración - Red" introducir "22" como puerto y guardar
+1. En "Información" iniciar el add-on
+1. Ya es posible acceder desde la terminal con `ssh root@IP_HOMEASSISTANT`
+
 
 #### Instalación sobre Debian 10 en Raspberry ####
 He realizado este proceso sobre una Pi4 de 4Gb con un stick ubs para el arranque siguiendo el [post de Tecnosanvaras] y realizando los siguientes pasos:
@@ -66,6 +84,11 @@ Con la instalación realizada, ya estamos en condiciones de acceder a la IP que 
 [info] 
 ```
 
+Este script nos monta una serie de contenedores, la mejor forma de gestionarlos es mediante portainer. Lo instalaremos con el siguiente comando y accederemos a el a través del pueto 9000 de nuestra Raspberry
+
+```
+docker run -d --name=Portainer --restart=always -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+```
 
 
 
@@ -125,6 +148,7 @@ Tenemos un senson de temperatura y un rele ya configurados gracias a ESPHome
 [Home Assistant]: https://www.home-assistant.io
 [instalación en raspberry]: https://www.home-assistant.io/installation/raspberrypi
 [post de Tecnosanvaras]: https://tecnosanvaras.es/instalacion-de-ha-supervisded-en-raspberry-pi-con-debian-10/
+[post]: https://sherblog.pro/raspberry-montaje-y-ssh/
 
 [image-01]: /images/20210428_home_assistant_01.jpg
 [image-02]: /images/20210428_home_assistant_02.jpg
