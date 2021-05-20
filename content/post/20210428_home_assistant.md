@@ -31,7 +31,7 @@ El primer paso es acceder a la web de [Home Assistant] y sigo los pasos de [inst
 > Si no sabes como descubrir la IP con la que la raspberry se ha conectado a la red puedes visitar mi [post] para obtener alguna respuesta.
 
 ##### Acceso ssh (Terminal) #####
-1. 
+1. Habilitar el modo avanzado desde la pestaña de usuario
 1. Acceder a la tiemda de complementos en el panel del supervisor
 1. Instalar "Terminal & ssh"
 1. En "Configuración - Opciones" introducir una contraseña en "password: "
@@ -135,13 +135,27 @@ switch:
 ```
 - Guardar y subir y ya está nuestro relé listo.
 
-#### Regulación de temperatura ####
-Tenemos un senson de temperatura y un rele ya configurados gracias a ESPHome
-
-
-
+#### Sensor de temperatura con un ESP-WROOM-32 ####
+Seguramente será matar moscas a cañonazos utilizar este microcontrolador como sólo sensor de temperatura. El ESP-WROOM-32 irá colocado en el salón y en un futuro es posible que haga más cosas.
 
 ![image_02]
+
+Voy a usar una sonda DHT22 con una resistencia de 4.7 kOhm entre el pin de datos y el de 5V. El pin de datos lo coloco en el pin 13 del ESP y creo un nuevo nodo dentro del módulo ESPHome al que nombraré "salon" y será del tipo "nodeMCU-32S".
+
+Al código que se genera automáticamente con la información de la wifi añado lo siguiente.
+
+```
+# Sensor de Temperatura AM2302
+sensor:
+  - platform: dht
+    pin: 13
+    temperature:
+      name: "Temperatura Salón"
+    humidity:
+      name: "Humedad Salón"
+    model: AM2302
+    update_interval: 60s
+```
 
 [Balena Etcher]: https://www.balena.io/etcher/
 [Debian para Raspberry]: https://raspi.debian.net/tested-images/
