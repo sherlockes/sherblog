@@ -16,11 +16,12 @@ tags:
 draft: true
 weight: 5
 ---
-Resumen de introducción
+Aquí dejo mis experiencias con Home assistant sobre una Raspberry Pi 4 de 4Gb.
 <!--more-->
-El primer paso es acceder a la web de [Home Assistant] y sigo los pasos de [instalación en raspberry] para novatos (La versión para Docker la probé hace un tiempo y me dió algún fallo con el modo supervisor y los addons que me impidió seguir adelante).
+
 
 ### Instalando Home assistant ###
+El primer paso es acceder a la web de [Home Assistant] y sigo los pasos de [instalación en raspberry] para novatos. De esta forma se instalará la distribución completa de Home Assistant
 
 #### Instalación de la distribución completa ####
 1. En el artículo de [instalación en raspberry] buscamos el enlace para la versión que necesitamos
@@ -89,6 +90,24 @@ Este script nos monta una serie de contenedores, la mejor forma de gestionarlos 
 ```
 docker run -d --name=Portainer --restart=always -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
 ```
+
+#### Instalación sobre Raspberry OS ####
+https://github.com/Kanga-Who/home-assistant/blob/master/Supervised%20Install%20on%20Raspberry%20Pi%20OS.md
+
+### Importando la configuración ###
+Si tenemos una inatantánea (snapshot) de una instalacion anterior resultará muy sencillo recuperar toda la configuración de home assistant. Para ello y tras instalar Home Assistant seguiremos los siguientes pasos:
+
+1. Instalar "FTP" desde la "Tienda de complementos" del Supervisor
+1. Iniciar el add-on desde la pestaña "Información"
+1. En "opciones" de la pestaña "Configuración" cambiar el usuario y contraseña
+1. Cambiar a "true" el permiso de subida ("allow_upload") y el acceso a la carpeta "backup"
+1. Guardar los cambios y reiniciar el add-on
+1. Acceder mediante ftp al servidor y copiar la instantánea en la carpeta "backup"
+1. En "Supervisor-Instantáneas" seleccionar la subida y restaurarla
+1. Espera unos minutos y accese de nuevo a Home Assistant
+
+
+
 
 
 
