@@ -106,13 +106,6 @@ Si tenemos una inatantánea (snapshot) de una instalacion anterior resultará mu
 1. En "Supervisor-Instantáneas" seleccionar la subida y restaurarla
 1. Espera unos minutos y accese de nuevo a Home Assistant
 
-
-
-
-
-
-
-
 ### Añadiendo microcontroladores ESP ###
 Desde el apartado "supervisor" accederemos a la tienda de complementos, donde buscaremos "ESPHome" para instalar el correspondiente módulo.
 
@@ -176,12 +169,50 @@ sensor:
     update_interval: 60s
 ```
 
+### Termostato de la caldera ###
+Tomaŕe como sensor la DHT22 conectada al ESP32 del salón y como relé el conectado al ESP01 de la caldera. Muy buenos resultados con unas pocas líneas de configuración que añadiremos al archivo "configuration.yaml"
+
+```
+climate:
+  - platform: generic_thermostat
+    name: Caldera
+    heater: switch.rele
+    target_sensor: sensor.temperatura_salon
+    min_temp: 16
+    max_temp: 23
+    ac_mode: false
+    target_temp: 19
+    cold_tolerance: 0.2
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 300
+    keep_alive:
+      minutes: 3
+    initial_hvac_mode: "off"
+    away_temp: 16
+    precision: 0.1
+```
+Todos los parámetros están definidos en la [configuración del termostato genérico].
+
+
+### Encendido remoto del NAS ###
+La forma que hasta ahora he utilizado para el encendido del Nas cuando no tengo el dedo delante del mismo es mediante el comando "wakeonlan" a la MAC del NAS pero en este caso nos encontramos con un problema y es que debemos lanzarlos desde el sistema operativo del host para que funcione, no desde el docker sobre el que está corriendo Home Asistant. Gracias a este post de [siytek] he conseguido ver la luz al final del tunel siguiendo estos pasos.
+
+1. 
+
+
+
+Links:
+
+
 [Balena Etcher]: https://www.balena.io/etcher/
 [Debian para Raspberry]: https://raspi.debian.net/tested-images/
 [Home Assistant]: https://www.home-assistant.io
 [instalación en raspberry]: https://www.home-assistant.io/installation/raspberrypi
 [post de Tecnosanvaras]: https://tecnosanvaras.es/instalacion-de-ha-supervisded-en-raspberry-pi-con-debian-10/
 [post]: https://sherblog.pro/raspberry-montaje-y-ssh/
+[siytek]: https://siytek.com/home-assistant-shell/
+[termostato genérico]: https://www.home-assistant.io/integrations/generic_thermostat/
 
 [image-01]: /images/20210428_home_assistant_01.jpg
 [image-02]: /images/20210428_home_assistant_02.jpg
