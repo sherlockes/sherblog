@@ -169,6 +169,31 @@ sensor:
     update_interval: 60s
 ```
 
+#### Sensor de temperatura con un ESP01 y DHT11 ####
+Una forma barata y sencilla de mediar la temperatura es usando un módulo de ESP01 + DHT11 como el auq aparece a continuación.
+
+![image-01]
+
+```
+# DHT11 config
+sensor:
+  - platform: dht
+    pin: 
+      number: GPIO2
+    temperature:
+      name: "Temperatura Estudio"
+      filters:
+        - offset: -5.0
+    humidity:
+      name: "Humedad Estudio"
+    update_interval: 10s
+    model: "DHT11"
+```
+
+> El módulo que he empleado presenta un error en la medidad de temperatura de 5ºC por lo que le he incluido un "offset" en la configuración.
+
+
+
 ### Termostato de la caldera ###
 Tomaŕe como sensor la DHT22 conectada al ESP32 del salón y como relé el conectado al ESP01 de la caldera. Muy buenos resultados con unas pocas líneas de configuración que añadiremos al archivo "configuration.yaml"
 
@@ -202,8 +227,26 @@ La forma que hasta ahora he utilizado para el encendido del Nas cuando no tengo 
 
 
 
-Links:
+### Notificaciones en Telegram ###
+En el archivo "configuration.yaml" añadiremos las sigueintes líneas
 
+```
+telegram_bot:
+  - platform: polling
+    api_key: BOT_TOKEN
+    allowed_chat_ids:
+      - CHAT_ID
+      
+notify:
+  - platform: telegram
+    name: Home_Assistant
+    chat_id: CHAT_ID
+```
+
+Donde BOT_TOKEN corresponde al token del bot y CHAT_ID a la identificación del canal donde se van a enviar los mensajes. En un primer momento, arranco las pruebas con mensajes a un canal donde el propio bot que va a enviar el mensaje está metido como administrador.
+
+Links:
+https://siytek.com/home-assistant-shell
 
 [Balena Etcher]: https://www.balena.io/etcher/
 [Debian para Raspberry]: https://raspi.debian.net/tested-images/
@@ -216,5 +259,6 @@ Links:
 
 [image-01]: /images/20210428_home_assistant_01.jpg
 [image-02]: /images/20210428_home_assistant_02.jpg
+[image-03]: /images/20210428_home_assistant_03.jpg
 
 
