@@ -46,6 +46,7 @@ De esta forma, con el servidor web montado sobre la Raspberry podría tener apag
 [Termostato casero]({{<relref"20201112_raspberry_termostato.md">}})\
 [Sincronizar Google Photos]({{<relref"20201203_raspberry_sincronizar_gphotos.md">}})\
 [Mi uso de crontab]({{<relref"20210217_raspberry_autofaenas.md">}})\
+[Home Assistant]({{<relref"20210527_raspberry_home_assistant.md">}})\
 Lo siguiente... Hugo
 
 ### Enlaces de interés

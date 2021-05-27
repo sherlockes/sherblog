@@ -20,16 +20,7 @@ Aquí dejo mis experiencias con Home assistant sobre una Raspberry Pi 4 de 4Gb.
 <!--more-->
 
 
-### Instalando Home assistant ###
-El primer paso es acceder a la web de [Home Assistant] y sigo los pasos de [instalación en raspberry] para novatos. De esta forma se instalará la distribución completa de Home Assistant
 
-#### Instalación de la distribución completa ####
-1. En el artículo de [instalación en raspberry] buscamos el enlace para la versión que necesitamos
-1. Grabar la imagen en el stick usk con [Balena Etcher]
-1. Montar el stick en la raspberry, conectar cable de red y alimentación y encender
-1. Esperamos unos minutos y ya se puede acceder a http://IP_raspberry:8123
-
-> Si no sabes como descubrir la IP con la que la raspberry se ha conectado a la red puedes visitar mi [post] para obtener alguna respuesta.
 
 ##### Acceso ssh (Terminal) #####
 1. Habilitar el modo avanzado desde la pestaña de usuario
@@ -41,58 +32,6 @@ El primer paso es acceder a la web de [Home Assistant] y sigo los pasos de [inst
 1. Ya es posible acceder desde la terminal con `ssh root@IP_HOMEASSISTANT`
 
 
-#### Instalación sobre Debian 10 en Raspberry ####
-He realizado este proceso sobre una Pi4 de 4Gb con un stick ubs para el arranque siguiendo el [post de Tecnosanvaras] y realizando los siguientes pasos:
-
-1. Descargar la ultima versión de [Debian para Raspberry]
-1. Descomprimir la imagen
-1. Grabar la imagen en el stick usk con [Balena Etcher]
-1. Conectar la Raspberry a un teclado, monitor y red cableada
-1. Insertar el stick usb y arrancar la Raspberry
-1. Tras el arranque, logearnos como "root"
-1. Actualizar las dependencias - `apt update`
-1. Instalar sudo - `apt install sudo`
-1. Crear un nuevo usuario - `adduser TU_USUARIO`
-1. Añadir el usuario creado al grupo sudo - `usermod -aG sudo TU_USUARIO`
-1. Averiguar la IP de la Raspberry - `ip addr show eth0`
-1. Reiniciar la raspberry
-
-> Importante no realizar un "apt upgrade" de la distribución ya que, a día de hoy (20210517), presenta un bug con el aranque desde usb que hace que se cuelgue el sistema.
-
-Con esto ya sólo resta instalar una utilidades, docker y el supervisor de home assistant mediante las siguientes líneas de código.
-
-```
-sudo -i
-
-apt-get install -y software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager
-
-systemctl disable ModemManager
-
-systemctl stop ModemManager
-
-curl -fsSL get.docker.com | sh
-
-curl -sL "https://raw.githubusercontent.com/Kanga-Who/home-assistant/master/supervised-installer.sh" | bash -s -- -m raspberrypi4-64
-```
-
-Con la instalación realizada, ya estamos en condiciones de acceder a la IP que se nos muestra al terminar el script a través del puerto 8123.
-
-```
-[info] 
-[info] Home Assistant supervised is now installed
-[info] First setup will take some time, when it's ready you can reach it here:
-[info] http://192.168.1.104:8123
-[info] 
-```
-
-Este script nos monta una serie de contenedores, la mejor forma de gestionarlos es mediante portainer. Lo instalaremos con el siguiente comando y accederemos a el a través del pueto 9000 de nuestra Raspberry
-
-```
-docker run -d --name=Portainer --restart=always -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
-```
-
-#### Instalación sobre Raspberry OS ####
-https://github.com/Kanga-Who/home-assistant/blob/master/Supervised%20Install%20on%20Raspberry%20Pi%20OS.md
 
 ### Importando la configuración ###
 Si tenemos una inatantánea (snapshot) de una instalacion anterior resultará muy sencillo recuperar toda la configuración de home assistant. Para ello y tras instalar Home Assistant seguiremos los siguientes pasos:
@@ -251,7 +190,7 @@ https://siytek.com/home-assistant-shell
 [Balena Etcher]: https://www.balena.io/etcher/
 [Debian para Raspberry]: https://raspi.debian.net/tested-images/
 [Home Assistant]: https://www.home-assistant.io
-[instalación en raspberry]: https://www.home-assistant.io/installation/raspberrypi
+
 [post de Tecnosanvaras]: https://tecnosanvaras.es/instalacion-de-ha-supervisded-en-raspberry-pi-con-debian-10/
 [post]: https://sherblog.pro/raspberry-montaje-y-ssh/
 [siytek]: https://siytek.com/home-assistant-shell/
