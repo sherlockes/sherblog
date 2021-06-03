@@ -28,15 +28,28 @@ Para la sincronización de una carpeta local con mi contenido de Google Photos v
 * Instalamos el paquete pip gphotos-sync y el entorno virtual (Creo que con lo segundo valdría)
 
 ```
-sudo apt-get install python3-pip
-/usr/bin/python3 -m pip install --upgrade pip
+- sudo apt-get install python3-pip
+- /usr/bin/python3 -m pip install --upgrade pip
 pip3 install --user pipenv 
-mkdir gphotos-sync 
-cd gphotos-sync
+- mkdir gphotos-sync 
+- cd gphotos-sync
 pip3 install --user pipenv ghotos-sync 
-pip install gphotos-sync
+- pip3 install gphotos-sync
 pipenv install gphotos-sync
 ```
+
+{{< borrador >}}
+Tras instalar gphotos-sync
+```
+WARNING: The script gphotos-sync is installed in '/home/pi/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+```
+
+
+export PATH=/home/pi/.local/bin:$PATH
+
+{{< / borrador >}}
 
 Con el paquete instalado, toca generar las credenciales Oauth2 desde [Google Cloud Platform]
 
@@ -64,6 +77,9 @@ En mi caso, aunque el trabajo lo realiza la raspberry, las fotos quedan almacena
 > Tras unos días funcionando correctamente me ha aparecido un fallo en el montaje de la unidad de mota del NAS "read: Connection reset by peer" que he conseguido reparar habilitando nuevamente la conexión sftp del NAS
 
 Con esto ya tenemos sincronizada nuestra galería de Google Photos en nuestro NAS. Seguro que esto es capaz de hacerlo el NAS sin ayuda de la Raspberry, pero esto será para otro día...
+
+Links:
+https://www.howtogeek.com/658904/how-to-add-a-directory-to-your-path-in-linux/
 
 [Google Cloud Platform]: https://console.cloud.google.com/cloud-resource-manager
 [Google Cloud Platform API]: https://console.cloud.google.com/apis/dashboard
