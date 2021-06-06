@@ -1,6 +1,6 @@
 ---
 title: "Sincronizar Google Photos desde la Raspberry"
-date: "2021-02-18"
+date: "2021-06-06"
 creation: "2020-12-03"
 description: "Como sincronizar las imágenes de Google Photos desde la Raspberry"
 thumbnail: "/images/20201203_sincronizar_gphotos_raspberry_00.jpg"
@@ -25,31 +25,26 @@ Para la sincronización de una carpeta local con mi contenido de Google Photos v
 * Actualizamos (Si es necesario)
 * Instalamos la funcion de entornos virtuales
 * Creamos el directorio "gphotos-sync" y nos ubicamos en el
-* Instalamos el paquete pip gphotos-sync y el entorno virtual (Creo que con lo segundo valdría)
+* Instalamos el paquete pip gphotos-sync
 
 ```
 - sudo apt-get install python3-pip
 - /usr/bin/python3 -m pip install --upgrade pip
-pip3 install --user pipenv 
-- mkdir gphotos-sync 
-- cd gphotos-sync
-pip3 install --user pipenv ghotos-sync 
 - pip3 install gphotos-sync
-pipenv install gphotos-sync
 ```
 
-{{< borrador >}}
-Tras instalar gphotos-sync
+Tras instalar gphotos-sync aparece una advertencia relativa a que el script se ha instalado en un directorio que no está definido como ruta por defecto para detectar nuevos comandos.
+
 ```
 WARNING: The script gphotos-sync is installed in '/home/pi/.local/bin' which is not on PATH.
   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
-
 ```
 
+Para corregirlo sólo es necesario añadir la ruta al "PATH" mediante el siguiente comando.
 
+```
 export PATH=/home/pi/.local/bin:$PATH
-
-{{< / borrador >}}
+```
 
 Con el paquete instalado, toca generar las credenciales Oauth2 desde [Google Cloud Platform]
 
@@ -69,7 +64,7 @@ Este proceso está descrito en [Gphotos-sync OAuth Creation]
 LLegados a esta punto ya sólo resta ejecutar el comando en el entorno virtual para que todas las fotos sean descargadas al directorio de destino
 
 ```
-pipenv run gphotos-sync directorio_destino
+gphotos-sync directorio_destino
 ```
 
 En mi caso, aunque el trabajo lo realiza la raspberry, las fotos quedan almacenadas en una carpeta del NAS que ha sido montada mediante sshfs y llave público/privada gracias a un [script] que se ejecuta diariamente mediante cron.
